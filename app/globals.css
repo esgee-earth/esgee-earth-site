@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
+/* Core CSS variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+/* Tailwind v4 theme tokens */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Brand colors */
+  --color-brand-teal: #0f766e;     /* river teal */
+  --color-brand-monsoon: #0d9488;  /* monsoon green / teal */
+  --color-brand-earth: #78350f;    /* Borneo earth tone */
+
+  /* Optional neutrals tuned for your brand */
+  --color-shell: #f8fafc;
+  --color-shell-soft: #f1f5f9;
 }
 
+/* Dark mode base */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020617; /* near-slate-950 */
+    --foreground: #e5e7eb;
   }
 }
 
+/* Body baseline */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* === Brand background textures === */
+
+/* Light, soft contour / topo feel for hero or key sections */
+.bg-contour-light {
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(15, 118, 110, 0.06) 0, transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(120, 53, 15, 0.06) 0, transparent 55%),
+    linear-gradient(
+      135deg,
+      rgba(148, 163, 184, 0.15) 1px,
+      transparent 0
+    );
+  background-size:
+    260px 260px,
+    280px 280px,
+    26px 26px;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+/* Very subtle topography/grid for supporting sections */
+.bg-topo-light {
+  background-image:
+    radial-gradient(circle at 10% 90%, rgba(13, 148, 136, 0.06) 0, transparent 55%),
+    radial-gradient(circle at 90% 10%, rgba(15, 23, 42, 0.06) 0, transparent 55%),
+    linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.15) 1px,
+      transparent 0
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(148, 163, 184, 0.15) 1px,
+      transparent 0
+    );
+  background-size:
+    220px 220px,
+    240px 240px,
+    22px 22px,
+    22px 22px;
+  background-repeat: no-repeat, no-repeat, repeat, repeat;
+}
+
+/* Slight texture only, for muted cards/sections */
+.bg-shell-texture {
+  background-image:
+    radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.12) 0, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(15, 118, 110, 0.08) 0, transparent 60%);
+  background-size: 200px 200px, 220px 220px;
+  background-repeat: no-repeat;
+}
+
+/* Dark-mode equivalents */
+@media (prefers-color-scheme: dark) {
+  .bg-contour-light {
+    background-image:
+      radial-gradient(circle at 15% 0%, rgba(16, 185, 129, 0.16) 0, transparent 55%),
+      radial-gradient(circle at 85% 80%, rgba(249, 115, 22, 0.18) 0, transparent 55%),
+      linear-gradient(
+        135deg,
+        rgba(30, 64, 175, 0.3) 1px,
+        transparent 0
+      );
+  }
+
+  .bg-topo-light {
+    background-image:
+      radial-gradient(circle at 10% 90%, rgba(45, 212, 191, 0.16) 0, transparent 55%),
+      radial-gradient(circle at 90% 10%, rgba(148, 163, 184, 0.2) 0, transparent 55%),
+      linear-gradient(
+        to right,
+        rgba(30, 64, 175, 0.35) 1px,
+        transparent 0
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(30, 64, 175, 0.35) 1px,
+        transparent 0
+      );
+  }
+
+  .bg-shell-texture {
+    background-image:
+      radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.3) 0, transparent 60%),
+      radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.25) 0, transparent 60%);
+  }
+}
+
+/* Optional helper classes for section shells */
+.section-shell {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+.section-muted {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background-color: rgba(248, 250, 252, 0.9);
+}
+
+@media (prefers-color-scheme: dark) {
+  .section-shell {
+    border-color: rgba(148, 163, 184, 0.45);
+    background-color: rgba(15, 23, 42, 0.9);
+  }
+  .section-muted {
+    border-color: rgba(148, 163, 184, 0.35);
+    background-color: rgba(15, 23, 42, 0.8);
+  }
+}
+

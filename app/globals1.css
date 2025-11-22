@@ -1,0 +1,39 @@
+/* Keep your original Tailwind import */
+@import "tailwindcss";
+
+/* CSS variables (KEEP) */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Dark mode support (KEEP) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Body reset (MODIFIED) */
+body {
+  background: var(--background);
+  color: var(--foreground);
+
+  /* remove your manual font-family override
+     let Tailwind + layout.tsx handle fonts */
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+
+  /* optional: nicer rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
