@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
+  { label: "Solution", href: "#how-it-works" },
   { label: "Team", href: "#team" },
 ];
 
@@ -96,4 +96,3 @@ export function Header() {
     </header>
   );
 }
-
