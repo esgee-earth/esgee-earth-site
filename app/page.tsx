@@ -435,7 +435,6 @@ function StepVisualInput() {
         {/* Animated hand */}
         <span
           className="
-            hidden md:inline-block
             absolute top-10 left-1/2
             text-4xl text-emerald-500
             animate-hand-drag
