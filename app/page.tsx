@@ -278,14 +278,15 @@ function HowItWorksSection() {
       </div>
 
       <h2 className="mt-8 text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
-        What happens between your bills and your buyer.
+        From your bills to buyers, with insights that help you{" "}
+        <span className="text-emerald-600">cut costs</span>
       </h2>
 
-      <p className="text-sm md:text-base text-slate-700 max-w-3xl mx-auto">
+      {/*<p className="text-sm md:text-base text-slate-700 max-w-3xl mx-auto">
         A guided flow that starts from the bills and logs you already keep,
         cleans and structures them under the hood, and ends with a buyer-ready
         ESG &amp; carbon dataset.
-      </p>
+      </p>*/}
     </div>
 
 
