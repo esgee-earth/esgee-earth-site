@@ -15,10 +15,15 @@ export default function Home() {
 
         {/* Centered hero copy */}
         <div className="mx-auto max-w-6xl text-center">
+
           {/* Top pill */}
-          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal mb-4">
-            For SMEs &amp; supply-chain partners
-          </p>
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-200">
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
+                For SMEs &amp; supply-chain partners
+              </span>
+            </div>
+          </div>
 
           {/* Hero headline */}
           <div className="space-y-1 mb-4">
@@ -38,7 +43,7 @@ export default function Home() {
             <p className="text-lg md:text-[26px] leading-snug md:leading-tight font-medium text-slate-800">
               and turn the same bills into{" "}
               <span className="text-brand-teal">ESG-ready data</span> for your
-              buyers.
+              buyers
             </p>
           </div>
 
