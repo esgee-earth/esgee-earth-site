@@ -554,7 +554,7 @@ function StepVisualTrends() {
             On track
           </span>
           <span className="text-[10px] text-slate-700">
-            Electricity – main site · RM 3,100
+            Electricity – main site · < br />RM 3,100
           </span>
         </div>
 
@@ -567,7 +567,7 @@ function StepVisualTrends() {
             Saving opportunity
           </span>
           <span className="text-[10px] text-slate-700">
-            Packaging materials · save RM 1,250
+            Packaging materials · < br />save RM 1,250
           </span>
         </div>
 
@@ -581,52 +581,54 @@ function StepVisualTrends() {
 
 function StepVisualExport() {
   return (
-    <div className="
-      rounded-2xl
-      border border-emerald-100
-      bg-gradient-to-br from-emerald-50 via-white to-emerald-50
-      shadow-sm
-      p-6
-      flex flex-col gap-4 items-center text-center
-    ">
-
-      {/* Two-icon flow */}
-      <div className="flex items-center justify-center gap-20 mt-2 text-center text-[11px] md:text-[12px]">
-
-        {/* Polished data */}
+    <div
+      className="
+        rounded-2xl border border-emerald-100
+        bg-gradient-to-br from-emerald-50 via-white to-emerald-50
+        shadow-sm p-5
+        flex flex-col items-center
+      "
+    >
+      <div
+        className="
+          w-full
+          flex flex-col md:flex-row
+          items-center md:items-center
+          justify-center md:justify-between
+          gap-6 md:gap-16
+          px-2
+        "
+      >
+        {/* LEFT SIDE */}
         <div className="flex flex-col items-center gap-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border  border-emerald-200 shadow-sm">
-            <span className="text-xl">🗂️</span>
+          <div className="h-16 w-16 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-3xl">
+            🗂️
           </div>
-          <span className="font-medium text-slate-700">
-            Your clean, <br />trustworthy data
-          </span>
+          <p className="text-slate-700 text-center text-sm">
+            Your clean, <br /> trustworthy data
+          </p>
         </div>
 
-        {/* Arrow */}
+        {/* MIDDLE: arrow + button */}
         <div className="flex flex-col items-center gap-3">
-          <span className="text-xl text-slate-400">→</span>
-            {/* Export button */}
-            <button className="mt-1 px-4 py-1.5 text-[11px] rounded-md bg-emerald-500 text-white shadow-sm">
-              Export file
-            </button>
+          <span className="text-2xl text-slate-400">→</span>
+          <button className="px-5 py-2 text-sm rounded-lg bg-emerald-500 text-white shadow-sm hover:bg-emerald-600">
+            Export file
+          </button>
         </div>
 
-        {/* Buyer receives */}
+        {/* RIGHT SIDE */}
         <div className="flex flex-col items-center gap-2">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-100 shadow-sm">
-            <span className="text-xl">📤</span>
+          <div className="h-16 w-16 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-3xl">
+            📤
           </div>
-          <span className="font-medium text-slate-700">
-            Buyer
-          </span>
+          <p className="text-slate-700 text-center text-sm">Buyer</p>
         </div>
       </div>
-
-
     </div>
   );
 }
+
 
 
 
