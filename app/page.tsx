@@ -610,7 +610,8 @@ function StepVisualExport() {
 
         {/* MIDDLE: arrow + button */}
         <div className="flex flex-col items-center gap-3">
-          <span className="text-2xl text-slate-400">→</span>
+          <span className="text-2xl text-slate-400 hidden md:inline">→</span>
+          <span className="text-2xl text-slate-400 md:hidden">↓</span>
           <button className="px-5 py-2 text-sm rounded-lg bg-emerald-500 text-white shadow-sm hover:bg-emerald-600">
             Export file
           </button>
