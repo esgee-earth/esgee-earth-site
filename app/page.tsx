@@ -553,9 +553,7 @@ function StepVisualProcessing() {
 
       {/* Caption */}
       <p className="text-[11px] text-slate-500 mt-1">
-        We run quality checks, sort every line into the right bucket, and attach
-        emission factors so each record becomes part of a small, reusable
-        dataset for ESG and carbon reporting.
+        Your data gets cleaned and organised.
       </p>
     </div>
   );
@@ -647,7 +645,7 @@ function StepVisualTrends() {
       </div>
 
       <p className="text-[11px] text-slate-500">
-        See which bills are driving costs up, and where usage looks efficient,
+        See which bills are driving costs up, and spot inefficiencies,
         so you know where to cut waste first.
       </p>
     </div>
@@ -707,7 +705,7 @@ function StepVisualExport() {
       </div>
 
       <p className="text-[11px] text-slate-500">
-        A structured dataset you can send to buyers with a click.
+        A structured dataset ready to be sent to your buyers.
       </p>
     </div>
   );
