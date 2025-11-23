@@ -97,10 +97,10 @@ export default function Home() {
 
       {/* ========================= FOUNDERS ========================= */}
       <section id="team" className="px-4 md:px-6 py-8 md:py-10">
-        <div className="max-w-5xl mx-auto space-y-6 text-left md:text-center">
+        <div className="max-w-5xl mx-auto space-y-6 text-center">
           {/* Header */}
           <div className="space-y-3">
-            <div className="flex md:justify-center">
+            <div className="flex justify-center">
               <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100">
                 <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
                   Founding team
@@ -113,7 +113,8 @@ export default function Home() {
             </h2>
 
             <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
-              We translate complex ESG and carbon frameworks into simple, practical steps SMEs can use.
+              We translate complex ESG and carbon frameworks into simple, practical
+              steps SMEs can use.
             </p>
           </div>
 
@@ -835,7 +836,7 @@ function ContactSection() {
     >
       <div className="max-w-5xl mx-auto rounded-3xl border border-emerald-300 bg-white shadow-md bg-gradient-to-br from-emerald-50 via-white to-teal-50 px-6 md:px-10 py-8 md:py-10 space-y-4 text-left md:text-center">
         {/* Pill */}
-        <div className="flex md:justify-center">
+        <div className="flex justify-center mb-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100">
             <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
               Pilot &amp; collaboration
@@ -843,18 +844,18 @@ function ContactSection() {
           </div>
         </div>
 
-        <h2 className="text-base md:text-lg font-semibold text-slate-900">
+        <h2 className="text-xl md:text-2xl font-semibold text-slate-900">
           Want a simple starting point for carbon and ESG data from your SME?
         </h2>
 
-        <p className="text-sm text-slate-700 max-w-2xl mx-auto">
+        <p className="mt-4 text-sm md:text-[15px] text-slate-700 max-w-3xl mx-auto leading-relaxed">
           We’re working with a small group of SMEs and supply-chain partners to
           shape ESGee Earth around real bills, operations and buyer requests,
           aligned with GHG Protocol, ISSB/IFRS S2 and Malaysia’s
           NSRF/Bursa Sustainability Reporting Guide.
         </p>
 
-        <div className="flex flex-col items-center gap-2 pt-1">
+        <div className="mt-8 flex justify-center">
           <a
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
