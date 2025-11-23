@@ -844,11 +844,11 @@ function ContactSection() {
           </div>
         </div>
 
-        <h2 className="text-xl md:text-2xl font-semibold text-slate-900">
+        <h2 className="text-xl md:text-2xl font-semibold text-slate-900 text-center">
           Want a simple starting point for carbon and ESG data from your SME?
         </h2>
 
-        <p className="mt-4 text-sm md:text-[15px] text-slate-700 max-w-3xl mx-auto leading-relaxed">
+        <p className="mt-4 text-sm md:text-[15px] text-slate-700 max-w-3xl mx-auto leading-relaxed text-center">
           We’re working with a small group of SMEs and supply-chain partners to
           shape ESGee Earth around real bills, operations and buyer requests,
           aligned with GHG Protocol, ISSB/IFRS S2 and Malaysia’s
