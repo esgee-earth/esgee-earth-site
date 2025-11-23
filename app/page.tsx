@@ -56,9 +56,11 @@ export default function Home() {
           </p>
 
           {/* Small print – frameworks */}
+          {/*
           <p className="text-[10px] md:text-xs text-slate-600 mb-8">
             Aligned with GHG Protocol, ISSB/IFRS and Malaysia NSRF guidance.
           </p>
+          */}
 
           {/* CTAs */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -238,19 +240,19 @@ function HeroDiagramMinimal() {
             variant="buyer"
             icon="📦"
             title="Structured data"
-            body="Supplier info with evidence in structured format that fits Scope 3 workflows."
+            body="Supplier info with evidence in structured format that mapped to Scope 3 categories."
           />
           <BenefitCardWithIcon
             variant="buyer"
             icon="📘"
             title="Framework-aligned"
-            body="Shaped to match GHG Protocol, IFRS S2 and Malaysia's NSRF/Bursa expectations."
+            body="with the GHG Protocol, IFRS S2 and GRI Standards for consistent, interoperable ESG data.."
           />
           <BenefitCardWithIcon
             variant="buyer"
             icon="✔️"
             title="Stay compliant"
-            body="Easier to meet value-chain reporting requirements as regulations tighten."
+            body="on value-chain reporting requirements as regulations tighten."
           />
         </div>
       </div>
@@ -294,8 +296,7 @@ function HowItWorksSection() {
           step="01"
           icon="📄"
           title="Enter what you already have"
-          body="Add bills, receipts, fuel logs, electricity bills and supplier names using simple guided prompts or a table view."
-          detail="No reconstruction of history needed. We start from where your SME is today."
+          body="We guide you to add bills, receipts, fuel logs, electricity bills, etc."
           align="left"
         >
           <StepVisualInput />
@@ -306,8 +307,7 @@ function HowItWorksSection() {
           step="02"
           icon="🧮"
           title="We clean and structure the data for you"
-          body="Under the hood, ESGee Earth standardises units, checks for gaps and organises everything into a small, repeatable dataset."
-          detail="The structure is designed to follow GHG Protocol scopes and IFRS&nbsp;S2 themes, without you touching a single formula."
+          body="We standardise units, checks for gaps and organises everything into a clean and neat dataset without a headache."
           align="right"
         >
           <StepVisualProcessing />
@@ -317,9 +317,8 @@ function HowItWorksSection() {
         <HowItWorksRow
           step="03"
           icon="🔍"
-          title="See your essentials at a glance"
-          body="View simple trends in usage and key inputs so you know what to update and where costs may be creeping up."
-          detail="Enough visibility to guide decisions, without turning your SME into a data centre."
+          title="See what’s costing more, and where you can save"
+          body="View simple trends of your usage so you know where to improve."
           align="left"
         >
           <StepVisualTrends />
@@ -330,8 +329,8 @@ function HowItWorksSection() {
           step="04"
           icon="📦"
           title="Export buyer-ready supplier data"
-          body="Share a clean supplier dataset that your customers can plug into their Scope 3 and climate-risk workflows."
-          detail="Aligned with GHG Protocol, IFRS S2 and Malaysia's NSRF/Bursa guidance so you don’t have to rewrite numbers for every new request."
+          body="Share your clean, trustworthy dataset to your buyers easily."
+          detail="Built on data structures mapped to the GHG Protocol, IFRS S2 and GRI Standards for consistent, interoperable ESG data."
           align="right"
         >
           <StepVisualExport />
@@ -404,318 +403,232 @@ function HowItWorksRow({
 
 function StepVisualInput() {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 flex flex-col gap-3">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="h-4 w-32 rounded-full bg-slate-100" />
-        <div className="inline-flex items-center gap-1 text-[10px] text-slate-500">
-          <span className="inline-block h-2 w-2 rounded-full bg-emerald-400" />
-          <span>Auto-save on</span>
-        </div>
-      </div>
+    <div
+      className="
+        rounded-2xl
+        border border-emerald-100
+        bg-gradient-to-br from-emerald-50 via-white to-emerald-50
+        shadow-sm
+        p-4
+        flex flex-col gap-4 items-center text-center
+      "
+    >
+      <div className="relative flex items-center justify-center gap-20 py-4">
 
-      {/* Table */}
-      <div className="flex-1 rounded-xl border border-slate-100 bg-slate-50/60 p-2">
-        {/* Header row */}
-        <div className="grid grid-cols-4 gap-2 mb-2">
-          <span className="text-[10px] font-medium text-slate-500">Date</span>
-          <span className="text-[10px] font-medium text-slate-500">
-            Category
-          </span>
-          <span className="text-[10px] font-medium text-slate-500">Amount</span>
-          <span className="text-[10px] font-medium text-slate-500">
-            Evidence
-          </span>
-        </div>
-
-        {/* Rows */}
-        <div className="space-y-1.5 text-[10px] text-slate-600">
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span>12/03</span>
-            <span className="truncate">Diesel</span>
-            <span>RM 820</span>
-            <span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-[9px]">
-                PDF
-              </span>
-            </span>
-          </div>
-
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span>18/03</span>
-            <span className="truncate">Electricity</span>
-            <span>RM 1,430</span>
-            <span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-[9px]">
-                Photo
-              </span>
-            </span>
-          </div>
-
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span>22/03</span>
-            <span className="truncate">Packaging</span>
-            <span>RM 540</span>
-            <span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-[9px]">
-                Receipt
-              </span>
-            </span>
+        {/* Left circle: bills & receipts */}
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className="
+              flex flex-col items-center justify-center
+              h-25 w-25
+              rounded-full bg-white
+              border border-slate-100
+              shadow-sm
+              text-3xl
+            "
+          >
+            <span>📑</span>
+            <span>🧾</span>
           </div>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="flex items-center justify-between">
-        <p className="text-[11px] text-slate-500">
-          Bills, receipts and logs entered via guided prompts or a simple table.
-        </p>
-        <button className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-3 py-1 text-[10px] font-medium text-white">
-          + Add row
-        </button>
+        {/* Animated hand */}
+        <span
+          className="
+            hidden md:inline-block
+            absolute top-10 left-1/2
+            text-4xl text-emerald-500
+            animate-hand-drag
+          "
+        >
+          🤚
+        </span>
+
+        {/* Right circle: organised place */}
+        <div
+          className="
+            flex items-center justify-center
+            h-25 w-25
+            rounded-full bg-white
+            border  border-emerald-200
+            shadow-sm
+            text-[15px] font-semibold text-emerald-600 leading-tight text-center
+          "
+        >
+          ESGee<br />Earth
+        </div>
       </div>
     </div>
   );
 }
+
+
+
+
 
 function StepVisualProcessing() {
   return (
-    <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm p-4 flex flex-col gap-3">
-      {/* Pipeline chips */}
-      <div className="flex flex-wrap items-center gap-2 text-[10px]">
-        <span className="rounded-full bg-white px-3 py-1 border border-slate-100">
-          Raw bills
-        </span>
-        <span className="text-slate-400">→</span>
-        <span className="rounded-full bg-white px-3 py-1 border border-emerald-100">
-          Cleaned entries
-        </span>
-        <span className="text-slate-400">→</span>
-        <span className="rounded-full bg-emerald-500/90 px-3 py-1 text-white border border-emerald-500">
-          Structured dataset
-        </span>
-      </div>
+    <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm p-4 flex flex-col gap-3 py-6">
 
-      {/* Three mini-cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-1">
-        {/* 1. Quality & anomalies */}
-        <div className="rounded-xl bg-white border border-emerald-100 p-2 flex flex-col gap-1">
-          <p className="text-[11px] font-semibold text-slate-800">
-            Quality &amp; anomalies
-          </p>
-          <div className="flex items-center justify-between text-[10px] text-slate-600">
-            <span>Electricity · Mar</span>
-            <span className="text-amber-600 font-medium">+32%</span>
+
+    {/* Header chip + 'and you get' */}
+    {/*<div className="flex flex-col items-center justify-center gap-1 text-[10px] text-slate-500">
+    <p className="text-[11px] font-medium text-slate-700 mb-3">
+      Clean and neat dataset
+    </p>
+    </div>*/}
+
+
+      {/* 3 simple visual steps */}
+      <div className="grid grid-cols-3 gap-3 mt-1 text-center text-[11px] md:text-[12px]">
+
+        {/* Step 1 */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-100 shadow-sm">
+            <span className="text-lg">✨</span>
           </div>
-          <div className="mt-1 h-1.5 rounded-full bg-amber-100 overflow-hidden">
-            <div className="h-full w-[75%] bg-amber-400" />
-          </div>
-          <p className="mt-1 text-[10px] text-slate-500">
-            Flags missing bills and unusual spikes, so you know what to check.
-          </p>
+          <span className="text-slate-700 font-medium">Clean data</span>
         </div>
 
-        {/* 2. Usage & category */}
-        <div className="rounded-xl bg-white border border-slate-100 p-2 flex flex-col gap-1">
-          <p className="text-[11px] font-semibold text-slate-800">
-            Usage &amp; category
-          </p>
-          <div className="space-y-1 text-[10px] text-slate-600">
-            <div className="flex items-center justify-between">
-              <span className="truncate">Diesel · Vehicles</span>
-              <span>1,200 L</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <span className="truncate">Electricity · Main site</span>
-              <span>8,500 kWh</span>
-            </div>
+        {/* Step 2 */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-emerald-100 shadow-sm">
+            <span className="text-lg">CO₂</span>
           </div>
-          <span className="mt-1 inline-flex w-fit rounded-full bg-slate-100 px-2 py-0.5 text-[9px] text-slate-500">
-            Auto-categorised for scopes &amp; sites
+          <span className="text-slate-700 font-medium whitespace-nowrap">
+            Carbon data
           </span>
         </div>
 
-        {/* 3. Carbon footprint ready */}
-        <div className="rounded-xl bg-white border border-emerald-200 p-2 flex flex-col gap-1">
-          <p className="text-[11px] font-semibold text-slate-800">
-            Carbon footprint ready
-          </p>
-          <div className="text-[10px] text-slate-600 space-y-1">
-            <p>Diesel · 1,200 L</p>
-            <p className="flex items-center gap-1">
-              <span className="text-slate-400">→</span>
-              <span>EF: 2.68 kg CO₂/L</span>
-            </p>
-            <p className="flex items-center gap-1">
-              <span className="text-slate-400">→</span>
-              <span className="font-medium text-emerald-700">3.2 tCO₂e</span>
-            </p>
+        {/* Step 3 */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-emerald-200 shadow-sm">
+            <span className="text-lg">🌱</span>
           </div>
-          <span className="mt-1 inline-flex w-fit rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] text-emerald-700 border border-emerald-100">
-            Factors mapped for GHG Protocol &amp; IFRS S2
+          <span className="text-slate-700 font-medium text-[10px] md:text-[11px]">
+            ESG data
           </span>
         </div>
       </div>
 
-      {/* Caption */}
-      <p className="text-[11px] text-slate-500 mt-1">
-        Your data gets cleaned and organised.
-      </p>
     </div>
   );
 }
 
+
 function StepVisualTrends() {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 flex flex-col gap-3">
+    <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm p-4 flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <p className="text-[11px] font-medium text-slate-700">
-          Cost &amp; usage highlights
+          Cost hotspots &amp; savings
         </p>
         <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[9px] text-slate-500">
           Last 3 months
         </span>
       </div>
 
-      {/* Rows */}
-      <div className="space-y-3 mt-1">
-        {/* Diesel */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-amber-400" />
-              <p className="text-[11px] font-medium text-slate-700">
-                Diesel – vehicles
-              </p>
-            </div>
-            <span className="text-[11px] font-semibold text-amber-600">
-              Higher than usual
-            </span>
+      {/* 3 spacious tiles */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+
+        {/* Higher cost */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-amber-100 bg-amber-50/60 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">🔺</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex-1 h-2 rounded-full bg-amber-200 overflow-hidden">
-              <div className="h-full w-[75%] bg-amber-400" />
-            </div>
-            <span className="w-16 text-right text-[10px] text-slate-600">
-              RM 4,200
-            </span>
-          </div>
+          <span className="font-semibold text-amber-700 text-[11px]">
+            Higher than usual
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Diesel – vehicles · < br />RM 4,200
+          </span>
         </div>
 
-        {/* Electricity */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-sky-400" />
-              <p className="text-[11px] font-medium text-slate-700">
-                Electricity – main site
-              </p>
-            </div>
-            <span className="text-[11px] font-semibold text-emerald-600">
-              On track
-            </span>
+        {/* On track */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-sky-100 bg-sky-50/70 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">⚖️</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex-1 h-2 rounded-full bg-sky-100 overflow-hidden">
-              <div className="h-full w-[55%] bg-sky-400" />
-            </div>
-            <span className="w-16 text-right text-[10px] text-slate-600">
-              RM 3,100
-            </span>
-          </div>
+          <span className="font-semibold text-sky-700 text-[11px]">
+            On track
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Electricity – main site · RM 3,100
+          </span>
         </div>
 
-        {/* Materials */}
-        <div>
-          <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <p className="text-[11px] font-medium text-slate-700">
-                Packaging materials
-              </p>
-            </div>
-            <span className="text-[11px] font-semibold text-emerald-700">
-              Potential saving
-            </span>
+        {/* Saving opportunity */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50/70 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">💡</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="flex-1 h-2 rounded-full bg-emerald-100 overflow-hidden">
-              <div className="h-full w-[45%] bg-emerald-400" />
-            </div>
-            <span className="w-16 text-right text-[10px] text-slate-600">
-              RM 1,250
-            </span>
-          </div>
+          <span className="font-semibold text-emerald-700 text-[11px]">
+            Saving opportunity
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Packaging materials · save RM 1,250
+          </span>
         </div>
+
       </div>
 
-      <p className="text-[11px] text-slate-500">
-        See which bills are driving costs up, and spot inefficiencies,
-        so you know where to cut waste first.
-      </p>
     </div>
   );
 }
+
+
 
 function StepVisualExport() {
   return (
-    <div className="h-48 md:h-56 rounded-2xl border border-slate-200 bg-white shadow-sm p-4 flex flex-col gap-3">
-      <div className="flex items-center justify-between">
-        <p className="text-[11px] font-medium text-slate-700">
-          Buyer-ready supplier file
-        </p>
-        <button className="text-[10px] font-medium text-brand-teal border border-emerald-200 rounded-full px-2 py-0.5 bg-emerald-50">
-          Export CSV
-        </button>
-      </div>
+    <div className="
+      rounded-2xl
+      border border-emerald-100
+      bg-gradient-to-br from-emerald-50 via-white to-emerald-50
+      shadow-sm
+      p-6
+      flex flex-col gap-4 items-center text-center
+    ">
 
-      <div className="flex-1 rounded-xl border border-slate-100 bg-slate-50/60 p-2">
-        {/* Header */}
-        <div className="grid grid-cols-4 gap-2 mb-2">
-          <span className="text-[10px] font-medium text-slate-500">
-            Supplier
-          </span>
-          <span className="text-[10px] font-medium text-slate-500">
-            Period
-          </span>
-          <span className="text-[10px] font-medium text-slate-500">
-            Scope inputs
-          </span>
-          <span className="text-[10px] font-medium text-slate-500">
-            Status
+      {/* Two-icon flow */}
+      <div className="flex items-center justify-center gap-20 mt-2 text-center text-[11px] md:text-[12px]">
+
+        {/* Polished data */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border  border-emerald-200 shadow-sm">
+            <span className="text-xl">🗂️</span>
+          </div>
+          <span className="font-medium text-slate-700">
+            Your clean, <br />trustworthy data
           </span>
         </div>
 
-        {/* Rows */}
-        <div className="space-y-1.5 text-[10px] text-slate-600">
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span className="truncate">Mill A</span>
-            <span>2024 Q1</span>
-            <span className="truncate">Fuel, Electricity</span>
-            <span className="text-emerald-600">Ready</span>
+        {/* Arrow */}
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-xl text-slate-400">→</span>
+            {/* Export button */}
+            <button className="mt-1 px-4 py-1.5 text-[11px] rounded-md bg-emerald-500 text-white shadow-sm">
+              Export file
+            </button>
+        </div>
+
+        {/* Buyer receives */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white border border-slate-100 shadow-sm">
+            <span className="text-xl">📤</span>
           </div>
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span className="truncate">Transport Co.</span>
-            <span>2024 Q1</span>
-            <span className="truncate">Diesel</span>
-            <span className="text-emerald-600">Ready</span>
-          </div>
-          <div className="grid grid-cols-4 gap-2 items-center">
-            <span className="truncate">Packaging Sdn Bhd</span>
-            <span>2024 Q1</span>
-            <span className="truncate">Materials</span>
-            <span className="text-amber-600">Review</span>
-          </div>
+          <span className="font-medium text-slate-700">
+            Buyer
+          </span>
         </div>
       </div>
 
-      <p className="text-[11px] text-slate-500">
-        A structured dataset ready to be sent to your buyers.
-      </p>
+
     </div>
   );
 }
+
+
 
 /* ============= SMALL BENEFIT CARD WITH ICON (CLARITY SECTION) ============= */
 function BenefitCardWithIcon({
@@ -816,7 +729,17 @@ function FounderCard({
             href={linkedin}
             target="_blank"
             rel="noreferrer"
-            className="text-sm text-brand-teal hover:underline mt-3"
+            className="
+              inline-flex items-center justify-center
+              px-4 py-1.5
+              mt-4
+              rounded-full
+              bg-emerald-50
+              text-[11px] font-medium text-emerald-700
+              shadow-sm
+              hover:bg-emerald-100
+              transition
+            "
           >
             LinkedIn
           </a>
@@ -849,10 +772,9 @@ function ContactSection() {
         </h2>
 
         <p className="mt-4 text-sm md:text-[15px] text-slate-700 max-w-3xl mx-auto leading-relaxed text-center">
-          We’re working with a small group of SMEs and supply-chain partners to
-          shape ESGee Earth around real bills, operations and buyer requests,
-          aligned with GHG Protocol, ISSB/IFRS S2 and Malaysia’s
-          NSRF/Bursa Sustainability Reporting Guide.
+          We’re working with a small group of SMEs to
+          shape ESGee Earth around real SME operations and buyer requests,
+          aligned with GHG Protocol, IFRS S2 and GRI Standards.
         </p>
 
         <div className="mt-8 flex justify-center">
