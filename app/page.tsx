@@ -329,7 +329,7 @@ function HowItWorksSection() {
         <HowItWorksRow
           step="04"
           icon="📦"
-          title="Export buyer-ready supplier data"
+          title="Export data to your buyers"
           body="Share your clean, trustworthy dataset to your buyers easily."
           detail="Built on data structures mapped to the GHG Protocol, IFRS S2 and GRI Standards for consistent, interoperable ESG data."
           align="right"
