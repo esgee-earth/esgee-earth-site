@@ -647,7 +647,7 @@ function StepVisualTrends() {
       </div>
 
       <p className="text-[11px] text-slate-500">
-        See which bills are driving costs up, and where usage looks efficient —
+        See which bills are driving costs up, and where usage looks efficient,
         so you know where to cut waste first.
       </p>
     </div>
@@ -707,8 +707,7 @@ function StepVisualExport() {
       </div>
 
       <p className="text-[11px] text-slate-500">
-        A structured dataset you can send to buyers, designed to plug into
-        Scope 3, IFRS&nbsp;S2 and Bursa SEDG reporting workflows.
+        A structured dataset you can send to buyers with a click.
       </p>
     </div>
   );
