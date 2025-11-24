@@ -35,7 +35,21 @@ export default function RootLayout({
             <p className="text-center md:text-left">
               © {new Date().getFullYear()}
               <span className="font-semibold text-slate-700"> ESGee Earth</span> · ESG for everyone, everywhere; with Earth in mind
+              < br/>
+              <span className="ftext-center md:text-left text-[10px] text-slate-400/80 italic">
+                Illustrations by{" "}
+                <a
+                  href="https://storyset.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-slate-500"
+                >
+                  Storyset
+                </a>
+              </span>
+
             </p>
+
 
             {/* Right side – Contact icons */}
             <div className="flex items-center justify-center md:justify-end gap-4">
@@ -74,18 +88,6 @@ export default function RootLayout({
             </div>
           </div>
 
-          {/* Storyset attribution */}
-          <p className="mt-1 px-40 text-center md:text-left text-[10px] text-slate-400/80 italic">
-            Illustrations by{" "}
-            <a
-              href="https://storyset.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-slate-500"
-            >
-              Storyset
-            </a>
-          </p>
 
         </footer>
 
