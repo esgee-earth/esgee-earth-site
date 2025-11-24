@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "./components/Header";
 import { Inter } from "next/font/google";
 import { EnvelopeIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-
+npm i @vercel/analytics
 
 const inter = Inter({
   subsets: ["latin"],
