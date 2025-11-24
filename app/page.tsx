@@ -1,10 +1,12 @@
 // app/page.tsx
 import type { ReactNode } from "react";
 import Image from "next/image";
+import HeroIllustrations from "./components/HeroIllustrations";
+
 
 export default function Home() {
   return (
-  <div className="mx-auto max-w-16xl px-4 py-12 md:py-16 space-y-16 md:space-y-20">
+  <div className="mx-auto max-w-16xl px-4 py-12 md:py-16 space-y-16 md:space-y-8">
       {/* ========================= HERO ========================= */}
       <section
         id="home"
@@ -80,6 +82,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
+      {/* Rotating illustrations */}
+      <HeroIllustrations />
+
 
       {/* ========================= SME–BUYER CLARITY (SECTION 2) ========================= */}
       <section
