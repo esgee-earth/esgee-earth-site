@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "./components/Header";
 import { Inter } from "next/font/google";
 import { EnvelopeIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-npm i @vercel/analytics
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,6 +27,7 @@ export default function RootLayout({
         <a id="top" />
         <Header />
         <main className="mt-4">{children}</main>
+        <Analytics />
 
         <footer className="mt-0 bg-emerald-50/40 border-t border-emerald-100 py-6 text-xs text-slate-600">
           <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
