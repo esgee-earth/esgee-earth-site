@@ -73,6 +73,20 @@ export default function RootLayout({
 
             </div>
           </div>
+
+          {/* Storyset attribution */}
+          <p className="mt-1 px-40 text-center md:text-left text-[10px] text-slate-400/80 italic">
+            Illustrations by{" "}
+            <a
+              href="https://storyset.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-slate-500"
+            >
+              Storyset
+            </a>
+          </p>
+
         </footer>
 
       </body>

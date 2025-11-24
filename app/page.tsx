@@ -117,7 +117,7 @@ export default function Home() {
               </div>
             </div>
 
-            <h2 className="text-lg md:text-xl font-semibold tracking-tight text-slate-900">
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
               Science-led clarity. Tech-enabled simplicity. Built for SMEs.
             </h2>
 
