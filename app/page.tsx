@@ -778,13 +778,11 @@ function ContactSection() {
         </div>
 
         <h2 className="text-xl md:text-2xl font-semibold text-slate-900 text-center">
-          Want a simple starting point for carbon and ESG data from your SME?
+          You already have 80% of the data you need.
         </h2>
 
         <p className="mt-4 text-sm md:text-[15px] text-slate-700 max-w-3xl mx-auto leading-relaxed text-center">
-          We’re working with a small group of SMEs to
-          shape ESGee Earth around real SME operations and buyer requests,
-          aligned with GHG Protocol, IFRS S2 and GRI Standards.
+          We help you fill the gaps and make your costs clearer along the way.
         </p>
 
         <div className="mt-8 flex justify-center">
@@ -792,7 +790,7 @@ function ContactSection() {
             href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
           >
-            Get in touch
+            Get started
           </a>
 
         </div>
