@@ -209,7 +209,7 @@ function HeroDiagramMinimal() {
             variant="sme"
             icon="💰"
             title="Save money"
-            body="Spot where energy and material costs build up using the bills you already keep."
+            body="Spot where operating costs build up using the bills you already keep."
           />
           <BenefitCardWithIcon
             variant="sme"
@@ -221,7 +221,7 @@ function HeroDiagramMinimal() {
             variant="sme"
             icon="🧭"
             title="No ESG headache"
-            body="Guided prompts that translate ESG frameworks into SME language."
+            body="No ESG frameworks or jargons to memorise."
           />
         </div>
       </div>
@@ -246,14 +246,14 @@ function HeroDiagramMinimal() {
           <BenefitCardWithIcon
             variant="buyer"
             icon="📦"
-            title="Structured data"
-            body="Supplier info with evidence in structured format that mapped to Scope 3 categories."
+            title="Structured supplier data"
+            body="in structured format mapped to Scope 3 categories, with proof of evidence."
           />
           <BenefitCardWithIcon
             variant="buyer"
             icon="📘"
             title="Framework-aligned"
-            body="with the GHG Protocol, IFRS S2 and GRI Standards for consistent, interoperable ESG data.."
+            body="guided by the GHG Protocol, IFRS S2 and GRI Standards for consistent, interoperable ESG data."
           />
           <BenefitCardWithIcon
             variant="buyer"
@@ -286,7 +286,7 @@ function HowItWorksSection() {
 
       <h2 className="mt-8 text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
         From your bills to buyers, with insights that help you{" "}
-        <span className="text-emerald-600">cut costs</span>
+        <span className="text-emerald-600 font-medium">cut costs</span>
       </h2>
 
       {/*<p className="text-sm md:text-base text-slate-700 max-w-3xl mx-auto">
@@ -315,7 +315,7 @@ function HowItWorksSection() {
           step="02"
           icon="🧮"
           title="We clean and structure the data for you"
-          body="We standardise units, checks for gaps and organises everything into a clean and neat dataset without a headache."
+          body="We standardise units, spot inconsistencies and organise everything into a clean and neat dataset for you."
           align="right"
         >
           <StepVisualProcessing />
