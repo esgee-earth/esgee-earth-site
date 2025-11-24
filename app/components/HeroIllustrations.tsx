@@ -27,23 +27,27 @@ export default function HeroIllustrations() {
     <div className="mt-4 mb-15 flex justify-center">
       {/* This container now *reserves space* so it won't overlap section 2 */}
       <div className="relative w-full max-w-3xl h-64 md:h-80">
-        {illustrations.map((src, i) => (
-          <Image
-            key={i}
-            src={src}
-            alt="SME illustration"
-            fill
-            sizes="(max-width: 768px) 80vw, 600px"
-            className={`
-              absolute inset-0
-              m-auto
-              object-contain
-              transition-opacity duration-700
-              ${i === activeIndex ? "opacity-100" : "opacity-0"}
-            `}
-          />
-        ))}
-      </div>
+      {illustrations.map((src, i) => (
+        <Image
+          key={i}
+          src={src}
+          alt="SME Illustration"
+          fill
+          sizes="(max-width: 768px) 80vw, 600px"
+          className={`
+            absolute inset-0
+            object-contain object-top
+
+            transition-all duration-700 ease-in-out
+
+            ${i === activeIndex
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95"
+            }
+          `}
+        />
+      ))}
     </div>
-  );
+  </div>
+);
 }
