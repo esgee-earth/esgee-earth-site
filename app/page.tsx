@@ -304,7 +304,7 @@ function HowItWorksSection() {
           step="01"
           icon="📄"
           title="Enter what you already have"
-          body="We guide you to add bills, receipts, fuel logs, electricity bills, etc."
+          body="We guide you to add receipts, electricity/water bills, operation logs, etc."
           align="left"
         >
           <StepVisualInput />
