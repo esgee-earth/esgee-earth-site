@@ -209,13 +209,13 @@ function HeroDiagramMinimal() {
             variant="sme"
             icon="💰"
             title="Save money"
-            body="Spot where operating costs build up using the bills you already keep."
+            body="Spot where operating costs build up and start cutting costs."
           />
           <BenefitCardWithIcon
             variant="sme"
             icon="⚙️"
             title="Optimise operations"
-            body="Turn scattered receipts and logs into one clear operational view."
+            body="Find delays, leakages, and inefficiencies hiding inside your bills and logs."
           />
           <BenefitCardWithIcon
             variant="sme"
