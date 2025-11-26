@@ -1,11 +1,7 @@
 // app/page.tsx
-"use client";
-
 import type { ReactNode } from "react";
 import Image from "next/image";
 import HeroIllustrations from "./components/HeroIllustrations";
-import * as React from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 
 export default function Home() {
@@ -527,179 +523,66 @@ function StepVisualProcessing() {
 }
 
 
-const TREND_SETS = {
-  "1m": {
-    label: "Last month",
-    tiles: [
-      {
-        status: "Higher than usual",
-        icon: "🔺",
-        bg: "bg-amber-50/60",
-        border: "border-amber-100",
-        textColor: "text-amber-700",
-        line1: "Diesel – vehicles",
-        line2: "RM 1,450",
-      },
-      {
-        status: "On track",
-        icon: "⚖️",
-        bg: "bg-sky-50/70",
-        border: "border-sky-100",
-        textColor: "text-sky-700",
-        line1: "Electricity – office",
-        line2: "RM 980",
-      },
-      {
-        status: "Saving opportunity",
-        icon: "💡",
-        bg: "bg-emerald-50/70",
-        border: "border-emerald-100",
-        textColor: "text-emerald-700",
-        line1: "Printing & paper",
-        line2: "save RM 320",
-      },
-    ],
-  },
-  "3m": {
-    label: "Last 3 months",
-    tiles: [
-      {
-        status: "Higher than usual",
-        icon: "🔺",
-        bg: "bg-amber-50/60",
-        border: "border-amber-100",
-        textColor: "text-amber-700",
-        line1: "Diesel – vehicles",
-        line2: "RM 4,200",
-      },
-      {
-        status: "On track",
-        icon: "⚖️",
-        bg: "bg-sky-50/70",
-        border: "border-sky-100",
-        textColor: "text-sky-700",
-        line1: "Electricity – main site",
-        line2: "RM 3,100",
-      },
-      {
-        status: "Saving opportunity",
-        icon: "💡",
-        bg: "bg-emerald-50/70",
-        border: "border-emerald-100",
-        textColor: "text-emerald-700",
-        line1: "Packaging materials",
-        line2: "save RM 1,250",
-      },
-    ],
-  },
-  "6m": {
-    label: "Last 6 months",
-    tiles: [
-      {
-        status: "Higher than usual",
-        icon: "🔺",
-        bg: "bg-amber-50/60",
-        border: "border-amber-100",
-        textColor: "text-amber-700",
-        line1: "Forklift maintenance",
-        line2: "RM 6,800",
-      },
-      {
-        status: "On track",
-        icon: "⚖️",
-        bg: "bg-sky-50/70",
-        border: "border-sky-100",
-        textColor: "text-sky-700",
-        line1: "Water – processing",
-        line2: "RM 2,450",
-      },
-      {
-        status: "Saving opportunity",
-        icon: "💡",
-        bg: "bg-emerald-50/70",
-        border: "border-emerald-100",
-        textColor: "text-emerald-700",
-        line1: "Idle machinery hours",
-        line2: "save RM 2,050",
-      },
-    ],
-  },
-} as const;
-
-type TrendKey = keyof typeof TREND_SETS;
-const RANGE_ORDER: TrendKey[] = ["1m", "3m", "6m"];
-
-export function StepVisualTrends() {
-  const [activeIndex, setActiveIndex] = React.useState(1); // start at 3m
-  const [isPaused, setIsPaused] = React.useState(false);
-
-  React.useEffect(() => {
-    if (isPaused) return;
-
-    const id = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % RANGE_ORDER.length);
-    }, 3500); // change speed here
-
-    return () => window.clearInterval(id);
-  }, [isPaused]);
-
-  const activeKey = RANGE_ORDER[activeIndex];
-  const current = TREND_SETS[activeKey];
-
+function StepVisualTrends() {
   return (
-    <div
-      className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm p-4 flex flex-col gap-4"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
+    <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm p-4 flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-center justify-between">
         <p className="text-[11px] font-medium text-slate-700">
           Cost hotspots &amp; savings
         </p>
-        <span className="rounded-full bg-teal-300 px-2 py-0.5 text-[9px] text-slate-900 text-semibold">
-          {current.label}
+        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[9px] text-slate-500">
+          Last 3 months
         </span>
       </div>
 
-      {/* Tiles with animation */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeKey}
-          initial={{ opacity: 0, y: 4 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -4 }}
-          transition={{ duration: 0.22 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center"
-        >
-          {current.tiles.map((tile, idx) => (
-            <div
-              key={idx}
-              className={[
-                "flex flex-col items-center gap-2 rounded-xl px-4 py-4 border",
-                tile.bg,
-                tile.border,
-              ].join(" ")}
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
-                <span className="text-xl">{tile.icon}</span>
-              </div>
-              <span className={`font-semibold text-[11px] ${tile.textColor}`}>
-                {tile.status}
-              </span>
-              <span className="text-[10px] text-slate-700">
-                {tile.line1}
-                <br />
-                {tile.line2}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-      </AnimatePresence>
+      {/* 3 spacious tiles */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+
+        {/* Higher cost */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-amber-100 bg-amber-50/60 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">🔺</span>
+          </div>
+          <span className="font-semibold text-amber-700 text-[11px]">
+            Higher than usual
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Diesel – vehicles · < br />RM 4,200
+          </span>
+        </div>
+
+        {/* On track */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-sky-100 bg-sky-50/70 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">⚖️</span>
+          </div>
+          <span className="font-semibold text-sky-700 text-[11px]">
+            On track
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Electricity – main site · < br />RM 3,100
+          </span>
+        </div>
+
+        {/* Saving opportunity */}
+        <div className="flex flex-col items-center gap-2 rounded-xl border border-emerald-100 bg-emerald-50/70 px-4 py-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+            <span className="text-xl">💡</span>
+          </div>
+          <span className="font-semibold text-emerald-700 text-[11px]">
+            Saving opportunity
+          </span>
+          <span className="text-[10px] text-slate-700">
+            Packaging materials · < br />save RM 1,250
+          </span>
+        </div>
+
+      </div>
+
     </div>
   );
 }
-
 
 
 
@@ -817,7 +700,6 @@ function FounderCard({
   highlight,
   imageSrc,
   linkedin,
-
 }: FounderCardProps) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white/95 p-6 shadow-sm flex flex-col h-full text-center">
