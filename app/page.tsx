@@ -247,7 +247,7 @@ function HeroDiagramMinimal() {
             variant="buyer"
             icon="📦"
             title="Structured supplier data"
-            body="in structured format mapped to Scope 3 categories, with proof of evidence."
+            body="mapped to Scope 3 categories, with proof of evidence."
           />
           <BenefitCardWithIcon
             variant="buyer"
