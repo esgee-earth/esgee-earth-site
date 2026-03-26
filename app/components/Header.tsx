@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Solution", href: "#how-it-works" },
+  { label: "Try the App", href: "https://app.esgee.earth" },
   { label: "Team", href: "#team" },
 ];
 
