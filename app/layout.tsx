@@ -29,14 +29,14 @@ export default function RootLayout({
         <main className="mt-4">{children}</main>
         <Analytics />
 
-        <footer className="mt-0 bg-emerald-50/40 border-t border-emerald-100 py-6 text-xs text-slate-600">
+        <footer className="mt-0 bg-emerald-50/40 border-t border-emerald-100 pt-4 pb-6 text-xs text-slate-600">
           <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
 
             {/* Left side – copyright */}
             <p className="text-center md:text-left">
               © {new Date().getFullYear()}
               <span className="font-semibold text-slate-700"> ESGee Earth</span> · ESG for everyone, everywhere; with Earth in mind
-              < br/>
+              <br />
               <span className="ftext-center md:text-left text-[10px] text-slate-400/80 italic">
                 Illustrations by{" "}
                 <a
@@ -45,7 +45,15 @@ export default function RootLayout({
                   rel="noopener noreferrer"
                   className="underline hover:text-slate-500"
                 >
-                  Storyset
+                  Storyset;
+                </a>
+                <a
+                  href="https://www.freepik.com/free-video/earth-from-space-night-day_3544615#fromView=search&page=1&position=3&uuid=7faf6044-88d2-4900-8850-174de0490472"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-slate-500"
+                >
+                    Freepik
                 </a>
               </span>
 

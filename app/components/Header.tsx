@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Try the App", href: "https://app.esgee.earth" },
-  { label: "Team", href: "#team" },
+  { label: "Home", href: "/" },
+  { label: "App", href: "/product" },
+  { label: "Team", href: "/#team" },
 ];
 
 export function Header() {
@@ -20,17 +21,13 @@ export function Header() {
       <div className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between gap-4">
         {/* Logo + brand */}
         <Link href="#top" className="flex items-center gap-2" onClick={close}>
-          <div className="h-8 w-8 rounded-full bg-brand-teal text-white flex items-center justify-center text-xs font-semibold">
-            EE
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold text-slate-900">
-              ESGee Earth
-            </span>
-            <span className="text-[11px] text-slate-500">
-              Practical ESG &amp; carbon clarity for SMEs
-            </span>
-          </div>
+          <Image
+            src="/esgee-earth-logo-navbar.png"
+            alt="ESGee Earth logo"
+            width={120}
+            height={32}
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -46,7 +43,7 @@ export function Header() {
           ))}
 
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center rounded-full bg-brand-teal px-4 py-1.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
           >
             Talk to us
