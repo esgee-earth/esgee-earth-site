@@ -18,7 +18,7 @@ export default function Home() {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/earth2.mp4" type="video/mp4" />
+        <source src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/earth2.mp4" type="video/mp4" />
       </video>
 
       {/* GRADIENT OVERLAY (your 70–60–50 tuning) */}
