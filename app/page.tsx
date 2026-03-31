@@ -5,7 +5,7 @@ import FounderCard from "@/app/components/FounderCard";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 md:py-5 space-y-30">
+    <div className="mx-auto max-w-6xl px-4 py-12 md:py-1 space-y-30">
 
     {/* ========================= HERO (VIDEO + GLASS) ========================= */}
     <section className="relative overflow-hidden rounded-3xl">
@@ -138,6 +138,9 @@ export default function Home() {
               We translate climate risk, nature-related systems, and scenario analyses
               into financial and operational decisions, as well as disclosures aligned with IFRS S2 and related frameworks.
             </p>
+            <p className="mt-4 text-sm text-emerald-600">
+              Climate Impact Engine (coming soon) →
+            </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -151,6 +154,14 @@ export default function Home() {
               We structure environmental data so it can be used for reporting,
               operations, and compliance with IFRS, GRI and related frameworks.
             </p>
+            <a
+              href="https://app.esgee.earth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-sm text-emerald-600 hover:underline"
+            >
+              Get early access (more capabilities coming) →
+            </a>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -164,6 +175,12 @@ export default function Home() {
               From Sabah-based work to early-stage carbon and nature projects,
               we connect ESG efforts to real outcomes.
             </p>
+            <a
+              href="/climate-action-sabah"
+              className="mt-4 inline-block text-sm text-emerald-600 hover:underline"
+            >
+              Climate Action Sabah →
+            </a>
           </div>
 
         </div>
@@ -291,6 +308,58 @@ export default function Home() {
 
         </div>
       </section>
+
+      <section className="w-full px-4 md:px-6 py-0">
+        <div className="max-w-4xl mx-auto text-center space-y-3">
+
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100">
+            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
+              Collaborations
+            </span>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-4">
+
+          <a
+            href="https://aibig.umk.edu.my"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-600 transition"
+          >
+            UMK-AIBIG
+          </a>
+
+          <span className="text-slate-300">•</span>
+
+          <a
+            href="https://www.esg-mapan.org.my/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-600 transition"
+          >
+            ESG-MAPAN
+          </a>
+
+          <span className="text-slate-300">•</span>
+
+          <a
+            href="https://riverstone-enviro.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-600 transition"
+          >
+            Riverstone Environmental
+          </a>
+
+        </div>
+
+        </div>
+      </section>
+
+      {/* subtle divider */}
+      <div className="w-25 h-[1px] bg-slate-200 mx-auto mt-10 mb-0"></div>
 
       {/* ========================= CLOSING ========================= */}
       <section className="text-center py-10 md:py-25 pb-2 bg-gradient-to-b from-transparent to-emerald-50/40">
