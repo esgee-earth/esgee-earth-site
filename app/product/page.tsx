@@ -787,7 +787,7 @@ function ContactSection() {
           We help you fill the gaps and make your costs clearer along the way.
         </p>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="https://app.esgee.earth"
             target="_blank"
@@ -795,6 +795,12 @@ function ContactSection() {
             className="inline-flex items-center justify-center rounded-full bg-brand-teal px-6 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
           >
             Get started for free
+          </a>
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full border border-emerald-300 bg-white px-6 py-2.5 text-sm font-medium text-brand-teal hover:bg-emerald-50 transition-colors"
+          >
+            Talk to us
           </a>
 
         </div>
