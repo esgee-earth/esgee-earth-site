@@ -22,7 +22,7 @@ export default function ClimateActionSabah() {
 
           <video
             ref={videoRef}
-            src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/MY-DigitalClimateStorytelling-withmusic.mp4"
+            src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/MY-DigitalClimateStorytelling-SeedPod%20%282%29.mp4"
             autoPlay
             muted
             loop
@@ -32,15 +32,16 @@ export default function ClimateActionSabah() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-black/30 flex items-center justify-center text-center px-6 pointer-events-none">
-            <div className="space-y-3">
-              <h1 className="text-white text-3xl md:text-5xl font-semibold">
-                Climate Action Sabah
-              </h1>
-              <p className="text-white/80 max-w-xl mx-auto text-sm md:text-base">
-                Where climate data meets communities, stories, and real-world action.
-              </p>
-            </div>
+          <div className="absolute inset-0 flex items-center justify-center text-center px-6 pointer-events-none">
+
+            <h1 className="text-white/70 text-3xl md:text-5xl font-semibold [text-shadow:0_2px_12px_rgba(0,0,0,0.45),0_0px_18px_rgba(16,185,129,0.25)]">
+              Climate Action Sabah
+            </h1>
+
+            <p className="absolute mt-20 max-w-xl text-white/70 text-sm md:text-base">
+              Where climate data meets communities, stories, and real-world action.
+            </p>
+
           </div>
 
           {/* Sound toggle ICON */}
