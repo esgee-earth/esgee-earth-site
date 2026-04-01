@@ -350,7 +350,18 @@ export default function Home() {
             rel="noopener noreferrer"
             className="hover:text-emerald-600 transition"
           >
-            Riverstone Environmental
+            Riverstone Environmental Sdn Bhd
+          </a>
+
+          <span className="text-slate-300">•</span>
+
+          <a
+            href="https://esgright.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-600 transition"
+          >
+            ESGright Sdn Bhd
           </a>
 
         </div>
