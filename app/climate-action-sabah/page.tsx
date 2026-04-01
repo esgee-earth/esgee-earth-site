@@ -22,7 +22,7 @@ export default function ClimateActionSabah() {
 
           <video
             ref={videoRef}
-            src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/MY-DigitalClimateStorytelling-SeedPod%20%2834mb%29.mp4"
+            src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/MY-DigitalClimateStorytelling-withmusic.mp4"
             autoPlay
             muted
             loop
@@ -65,7 +65,7 @@ export default function ClimateActionSabah() {
           </p>
 
           <p className="text-slate-600">
-            Through our grassroots initiative in Sabah, we collaborate with local sururban communities in Penampang to document,
+            Through our grassroots initiative in Sabah, we collaborate with local suburban communities in Penampang to document,
             understand, and respond to climate realities on the ground; connecting
             science, storytelling, and action.
           </p>
