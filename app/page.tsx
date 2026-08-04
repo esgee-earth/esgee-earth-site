@@ -2,196 +2,269 @@
 
 import StepVisualJourney from "@/app/components/StepVisualJourney";
 import FounderCard from "@/app/components/FounderCard";
+import ClimateRiskSnapshot from "@/app/components/ClimateRiskSnapshot";
+import WarmingStripes from "@/app/components/WarmingStripes";
+import { AtmosphericJourney } from "@/app/components/AtmosphericJourney";
+import { ScrollCrossfadeStack } from "@/app/components/ScrollCrossfadeStack";
+import { CloudSun, TreePine, Database, HeartHandshake, Factory, DollarSign, FileText } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 md:py-1 space-y-30">
+    <>
+      <AtmosphericJourney>
 
-    {/* ========================= HERO (VIDEO + GLASS) ========================= */}
-    <section className="relative overflow-hidden rounded-3xl">
-
-      {/* VIDEO BACKGROUND */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="https://3lgygfp8v2nfpeqq.public.blob.vercel-storage.com/earth2.mp4" type="video/mp4" />
-      </video>
-
-      {/* GRADIENT OVERLAY (your 70–60–50 tuning) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/60 to-white/50" />
-
-      {/* CONTENT WRAPPER */}
-      <div className="relative z-10 flex justify-center px-6 py-20 md:py-28">
-
-        {/* GLASS PANEL */}
-        <div className="max-w-3xl text-center space-y-4 bg-white/45 backdrop-blur-md rounded-2xl px-6 py-8 md:px-10 md:py-10 border border-white/30 shadow-lg">
-
-
-          {/* HEADLINE (TWO-TONED) */}
-          <h1 className="text-[26px] md:text-[42px] font-semibold tracking-tight leading-tight drop-shadow-[0_1px_1px_rgba(255,255,255,0.4)]">
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 bg-clip-text text-transparent">
-              Climate science.
-            </span>{" "}
-            <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 bg-clip-text text-transparent">
-              ESG data.
-            </span>{" "}
-            <span className="text-slate-900 italic whitespace-nowrap">
-              Real-world decisions.
-            </span>
-          </h1>
-
-          {/* SUBTEXT */}
-          <p className="text-sm md:text-base text-slate-700 max-w-2xl mx-auto drop-shadow-[0_1px_1px_rgba(255,255,255,0.3)]">
-            We work across climate, ESG data systems, and real-world implementation to help
-            businesses move from scattered records to structured, decision-ready data.
-          </p>
-
-          {/* CTA BUTTONS */}
-          <div className="flex justify-center gap-3 mt-4 flex-wrap">
-            <a
-              href="https://app.esgee.earth"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
-            >
-              Get early access
-            </a>
-
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-slate-300/70 bg-white/90 px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-white transition-colors shadow-sm"
-            >
-              Work with us
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-      {/* ========================= QUIET TRUTH ========================= */}
-      <section className="text-center space-y-4 max-w-3xl mx-auto bg-slate-50/60 rounded-2xl p-6 md:p-10">
-
-        <h2 className="text-lg md:text-xl font-semibold text-slate-900">
-          A quieter truth about ESG
-        </h2>
-
-        <p className="text-sm text-slate-700 leading-relaxed">
-          ESG today is often treated as a reporting exercise.
-          But reporting is the last step, not the first.
-        </p>
-
-        <p className="text-sm text-slate-700 leading-relaxed">
-          Before disclosures, before frameworks, before audits,
-          there is data.
-        </p>
-
-        <p className="text-base text-amber-700 leading-relaxed font-medium">
-          Messy. Incomplete. Unstructured.
-        </p>
-
-        <p className="text-sm text-slate-700 leading-relaxed">
-          And yet, this is the data decisions are made on.
-        </p>
-
-        <p className="text-sm text-slate-700 leading-relaxed">
-          Frameworks like the International Sustainability Standards Board (IFRS S1/S2)
-          and the Global Reporting Initiative (GRI) are not asking for better narratives.
-          They are asking for clear, structured, decision-useful information.
-        </p>
-
-        <p className="text-base leading-relaxed font-medium bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 bg-clip-text text-transparent">
-          That starts here.
-        </p>
-
-      </section>
-
-      {/* ========================= WHAT WE DO ========================= */}
-      <section className="space-y-10 max-w-5xl mx-auto">
-
-        <div className="text-center space-y-3">
-          <h2 className="text-xl md:text-2xl font-semibold tracking-tight bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 bg-clip-text text-transparent">
-
-            What we do
-          </h2>
-
-          <p className="text-sm md:text-[14px] text-slate-700 max-w-2xl mx-auto">
-            ESG doesn’t live in one place. It lives across data, systems, and real-world implementation.<br /> And there is where our work lies.
-          </p>
-        </div>
-
-        <div className="grid gap-7 md:grid-cols-3">
-
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span>🌏</span>
-              <h3 className="font-semibold text-slate-900">
-                Climate & Nature Intelligence
-              </h3>
+        {/* ===================== CHAPTER 1 — THE WHOLE PICTURE ===================== */}
+        <section className="min-h-screen flex items-center justify-center px-6">
+          <div className="max-w-3xl text-center space-y-5">
+            <h1 className="font-display text-[28px] md:text-[46px] font-medium tracking-tight leading-tight text-white">
+              Climate science. Nature risk.{" "}
+              <span className="italic text-white/80">Boardroom decisions.</span>
+            </h1>
+            <p className="text-sm md:text-base text-white/70 max-w-2xl mx-auto">
+              We translate atmospheric and nature-related science into climate- and
+              nature-risk disclosure for corporates, financial institutions, and regulated
+              entities navigating a changing climate.
+            </p>
+            <div className="flex justify-center gap-3 mt-4 flex-wrap">
+              <a href="/climate" className="inline-flex items-center justify-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors">
+                See the Climate Impact Engine
+              </a>
+              <a href="/contact" className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-sm px-5 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition-colors">
+                Work with us
+              </a>
             </div>
-            <p className="text-sm text-slate-600">
-              We translate climate risk, nature-related systems, and scenario analyses
-              into financial and operational decisions, as well as disclosures aligned with IFRS S2 and related frameworks.
+          </div>
+        </section>
+
+        {/* ===================== CHAPTER 2 — WHERE THE DATA STARTS ===================== */}
+        <section className="min-h-screen flex items-center justify-center px-6">
+          <div className="max-w-2xl text-center space-y-4">
+            <h2 className="font-display text-lg md:text-2xl font-medium text-white">
+              A quieter truth about climate risk
+            </h2>
+            <p className="text-sm text-white/75 leading-relaxed">
+              Climate and nature risk disclosure is often treated as a compliance exercise.
+              But the real work happens earlier, in the science itself.
             </p>
-            <p className="mt-4 text-sm text-emerald-600">
-              Climate Impact Engine (coming soon) →
+            <p className="text-sm text-white/75 leading-relaxed">
+              Before IFRS S2/TCFD, before TNFD, before scenario tables, there is raw model output,
+              incomplete rainfall records, and ecological data that was never meant for a
+              spreadsheet.
+            </p>
+            <p className="text-base text-white font-medium">
+              Messy. Incomplete. Unstructured.
+            </p>
+            <p className="text-sm text-white/75 leading-relaxed">
+              And yet, this is what boards are asked to make decisions on. Frameworks like
+              IFRS S2 and TNFD aren&apos;t asking for better narratives — they&apos;re asking for
+              physically grounded, decision-useful signals.
+            </p>
+            <p className="text-base font-medium text-white">
+              That&apos;s where the science comes in.
             </p>
           </div>
+        </section>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span>📊</span>
-              <h3 className="font-semibold text-slate-900">
-                ESG Data Systems
-              </h3>
+        {/* ===================== CHAPTER 3 — WHAT MOVES IT ===================== */}
+        <section className="min-h-screen flex items-center justify-center px-4 md:px-6 py-24">
+          <div className="w-full max-w-4xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm overflow-hidden">
+
+            <div className="text-center p-6 md:p-8 border-b border-slate-100">
+              <h2 className="font-display text-xl md:text-2xl font-medium text-brand-navy">
+                What we do
+              </h2>
+              <p className="text-sm text-slate-700 mt-2">
+                Climate and nature risk don&apos;t live in one place. They move through science,
+                disclosure, and the ground itself. And that is where our work lies.
+              </p>
             </div>
-            <p className="text-sm text-slate-600">
-              We structure environmental data so it can be used for reporting,
-              operations, and compliance with IFRS, GRI and related frameworks.
-            </p>
-            <a
-              href="https://app.esgee.earth"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm text-emerald-600 hover:underline"
-            >
-              Get early access (more capabilities coming) →
-            </a>
-          </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span>🌱</span>
-              <h3 className="font-semibold text-slate-900">
-                Climate Projects & Implementation
-              </h3>
+            <div className="divide-y divide-slate-100">
+
+              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
+                <div className="flex items-start gap-3">
+                  <span className="font-data text-2xl text-brand-teal/25 leading-none">01</span>
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <CloudSun className="w-4 h-4 text-brand-teal shrink-0" />
+                    <h3 className="font-display font-medium text-slate-900">
+                      Climate &amp; Nature Risk
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-600">
+                    Physical and transition climate risk, scenario analysis, and nature-related risk for
+                    regulatory disclosures (e.g. IFRS S2/TCFD/TNFD), SBTi-aligned net zero &amp; transition planning,
+                    and operational &amp; strategic planning.
+                  </p>
+                  <a href="/climate" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
+                    Explore the Climate Impact Engine (preview) →
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
+                <div className="flex items-start gap-3">
+                  <span className="font-data text-2xl text-brand-teal/25 leading-none">02</span>
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <TreePine className="w-4 h-4 text-brand-teal shrink-0" />
+                    <h3 className="font-display font-medium text-slate-900">
+                      Carbon Project Development
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-600">
+                    Carbon credit project development and carbon stock assessment: from
+                    satellite-based feasibility screening through field verification and
+                    methodology design.
+                  </p>
+                  <a href="/contact" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
+                    Talk to us →
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
+                <div className="flex items-start gap-3">
+                  <span className="font-data text-2xl text-brand-teal/25 leading-none">03</span>
+                  <div className="flex items-center gap-2 pt-0.5">
+                    <Database className="w-4 h-4 text-brand-teal shrink-0" />
+                    <h3 className="font-display font-medium text-slate-900">
+                      ESG Data Systems
+                    </h3>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-600">
+                    We structure environmental data so it can be used for reporting,
+                    operations, and compliance with IFRS, GRI and related frameworks.
+                  </p>
+                  <a href="/sme" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
+                    See the SME preview →
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
+                <div className="flex items-start gap-3">
+                  <span className="font-data text-2xl text-brand-teal/25 leading-none">04</span>
+                  <div className="pt-0.5">
+                    <div className="flex items-center gap-2">
+                      <HeartHandshake className="w-4 h-4 text-brand-teal shrink-0" />
+                      <h3 className="font-display font-medium text-slate-900">
+                        Climate Action Sabah
+                      </h3>
+                    </div>
+                    <span className="inline-block text-[10px] font-medium uppercase tracking-wide text-slate-400 mt-1">
+                      Community Initiative
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-sm text-slate-600">
+                    Community environmental knowledge, digital storytelling, and citizen
+                    science across Sabah.
+                  </p>
+                  <a href="/climate-action-sabah" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
+                    Learn more →
+                  </a>
+                </div>
+              </div>
+
             </div>
-            <p className="text-sm text-slate-600">
-              From Sabah-based work to early-stage carbon and nature projects,
-              we connect ESG efforts to real outcomes.
-            </p>
-            <a
-              href="/climate-action-sabah"
-              className="mt-4 inline-block text-sm text-emerald-600 hover:underline"
-            >
-              Climate Action Sabah →
-            </a>
           </div>
+        </section>
 
-        </div>
+        {/* ===================== CHAPTER 4 — WHERE IT LANDS (5 crossfading beats) ===================== */}
+        <ScrollCrossfadeStack
+          beats={[
+            <div key="a" className="text-center">
+              <p className="font-display text-2xl md:text-4xl font-medium text-white">
+                Where the science starts
+              </p>
+              <p className="text-white/55 text-sm mt-2">
+                From atmospheric data to what it means on the ground
+              </p>
+            </div>,
 
-        <div className="hidden text-center">
-          <a href="/product" className="text-brand-teal text-sm font-medium">
-            See how this works in practice →
-          </a>
-        </div>
+            <div key="b" className="max-w-2xl text-center space-y-3">
+              <h2 className="font-display text-xl md:text-3xl font-medium text-white">
+                From raw climate and nature models to a boardroom-ready signal
+              </h2>
+              <p className="text-sm md:text-base text-white/75 leading-relaxed">
+                Physical risk disclosure under IFRS S2/TCFD starts with climate model
+                output, not a template. Nature-related disclosure under TNFD starts the
+                same way, with land-use, ecosystem condition, and species data most tools
+                never touch. We work directly with both to translate hazard and
+                dependency signals into decision-ready metrics.
+              </p>
+            </div>,
 
-      </section>
+            <ClimateRiskSnapshot key="c" />,
+
+            <div key="c2" className="max-w-3xl text-center space-y-6">
+              <div>
+                <h2 className="font-display text-xl md:text-3xl font-medium text-white">
+                  What that number means for a balance sheet
+                </h2>
+                <p className="text-sm text-white/60 mt-2">
+                  Same location, same scenario — 46 hot days a year by the 2050s under SSP3-7.0.
+                </p>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div className="bg-white/90 rounded-2xl p-4 text-left">
+                  <Factory className="w-4 h-4 text-brand-teal mb-2" />
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Operational</p>
+                  <p className="text-sm text-slate-700">
+                    Cooling load, outdoor workforce safety windows, and equipment
+                    derating during peak heat.
+                  </p>
+                </div>
+                <div className="bg-white/90 rounded-2xl p-4 text-left">
+                  <DollarSign className="w-4 h-4 text-brand-teal mb-2" />
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Financial</p>
+                  <p className="text-sm text-slate-700">
+                    Capex for resilience upgrades, insurance repricing, and
+                    asset-level impairment exposure.
+                  </p>
+                </div>
+                <div className="bg-white/90 rounded-2xl p-4 text-left">
+                  <FileText className="w-4 h-4 text-brand-teal mb-2" />
+                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Disclosure</p>
+                  <p className="text-sm text-slate-700">
+                    Feeds IFRS S2 Metrics &amp; Targets and TCFD Strategy as a
+                    quantified exposure, not a narrative.
+                  </p>
+                </div>
+              </div>
+            </div>,
+
+            <div key="d" className="max-w-md w-full space-y-4">
+              <div className="text-center">
+                <p className="font-display text-lg md:text-xl font-medium text-white">
+                  Start with what you already have
+                </p>
+                <p className="text-white/55 text-xs mt-1">
+                  One simple step, done consistently, is enough to move forward
+                </p>
+              </div>
+              <StepVisualJourney />
+            </div>,
+
+            <div key="e" className="max-w-2xl mx-auto text-center space-y-3">
+              <p className="font-display text-lg md:text-4xl font-medium text-white">
+                ESG is not just reporting.
+              </p>
+              <p className="text-lg md:text-xl text-brand-teal">
+                It&apos;s about data you can actually use to make real decisions in a changing
+                world — monitored continuously, not reported once.
+              </p>
+            </div>,
+          ]}
+        />
+
+      </AtmosphericJourney>
 
       {/* ========================= INSIGHTS (HIDDEN) ========================= */}
       <section className="hidden text-center space-y-3">
@@ -201,195 +274,97 @@ export default function Home() {
         </p>
       </section>
 
-
-      {/* ======================= A SIMPLE PLACE TO START ====================== */}
-      <section className="space-y-10 max-w-5xl mx-auto bg-emerald-50/40 rounded-2xl p-6 md:p-8 border border-emerald-100 text-center">
-
-        {/* Header */}
-        <div className="space-y-3 max-w-2xl mx-auto">
-          <h2 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 bg-clip-text text-transparent">
-            A simple place to start
-          </h2>
-
-          <p className="text-slate-700 max-w-xl mx-auto text-sm">
-            ESG is not something you figure out all at once.
-            You don’t need to understand every framework to begin.
-          </p>
+      {/* ========================= TEAM + COLLABORATIONS (textured band) ========================= */}
+      <div className="bg-gradient-to-b from-brand-mist/50 to-white">
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <WarmingStripes height="h-3 md:h-4" />
         </div>
 
-        {/* ANIMATION */}
-        <div className="flex justify-center">
-          <div className="w-full max-w-md">
-            <StepVisualJourney />
-          </div>
-        </div>
+        <div className="mx-auto max-w-6xl px-4 py-14 space-y-16">
 
-        {/* SUPPORTING TEXT */}
-        <div className="space-y-3 max-w-xl mx-auto">
-          <p className="text-sm text-slate-700">
-            Most businesses already have the data. They just don’t see it that way yet.<br />
-            Start with what you already have.
-          </p>
+          {/* ========================= TEAM ========================= */}
+          <section id="team" className="px-4 md:px-6">
+            <div className="max-w-5xl mx-auto space-y-6 text-center">
+              <div className="space-y-3">
+                <div className="flex justify-center">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-brand-teal/15">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
+                      Founding Team
+                    </span>
+                  </div>
+                </div>
 
-          <p className="text-sm text-slate-700 font-medium">
-            <br />✔ One simple step, done consistently, is enough to move forward.
-          </p>
-        </div>
+                <h2 className="font-display text-xl md:text-2xl font-medium tracking-tight text-slate-900">
+                  Science-led clarity. Tech-enabled simplicity.
+                </h2>
 
-        {/* CTA */}
-        <div className="flex justify-center gap-3 pt-2 flex-wrap">
+                <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
+                  We turn complex climate science and ESG data systems into something usable and practical.
+                </p>
+              </div>
 
-          {/* PRIMARY CTA */}
-          <a
-            href="https://app.esgee.earth"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-brand-teal px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-monsoon transition-colors"
-          >
-            Try the app (demo)
-          </a>
-
-          {/* SECONDARY CTA */}
-          <a
-            href="/product"
-            className="inline-flex items-center justify-center rounded-full border border-slate-300/70 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors"
-          >
-            Learn more
-          </a>
-
-        </div>
-
-      </section>
-
-      {/* ========================= TEAM ========================= */}
-      <section id="team" className="px-4 md:px-6 pt-10 md:pt-2 pb-0">
-        <div className="max-w-5xl mx-auto space-y-6 text-center">
-
-          {/* Header */}
-          <div className="space-y-3">
-
-            <div className="flex justify-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100">
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
-                  Founding Team
-                </span>
+              <div className="grid gap-4 md:grid-cols-2">
+                <FounderCard
+                  name="Dr Marieanne Leong"
+                  role="Founder · Climate Scientist"
+                  description="6+ years experience in climate and computing as Senior Lecturer, AI Fellow, Microsoft Tech Mentor, and Certified ESG Reporting Practitioner."
+                  highlight="On a mission to turn complex ESG into clarity and practical action."
+                  imageSrc="/founders/mae.png"
+                  linkedin="https://www.linkedin.com/in/marieanneleong"
+                />
+                <FounderCard
+                  name="Dr Laurynas Pukenas"
+                  role="Chief Technology Officer"
+                  description="6+ years experience in delivering innovative solutions for operations of 3 largest UK railway operators."
+                  highlight="On a mission to engineer simplicity without sacrificing power."
+                  imageSrc="/founders/laurynas.png"
+                  linkedin="https://www.linkedin.com/in/laurynaspukenas"
+                />
               </div>
             </div>
+          </section>
 
-            <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-slate-900">
-              Science-led clarity. Tech-enabled simplicity.
-            </h2>
+          {/* ========================= COLLABORATIONS ========================= */}
+          <section className="w-full px-4 md:px-6">
+            <div className="max-w-4xl mx-auto text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-brand-teal/15">
+                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
+                    Collaborations
+                  </span>
+                </div>
+              </div>
 
-            <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
-              We turn complex climate science and ESG data systems into something usable and practical.
-            </p>
+              <div className="grid gap-4 md:grid-cols-3 mt-4 text-left">
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Academic</span>
+                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
+                    <a href="https://trace.umk.edu.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMK-TRaCe</a>
+                    <a href="https://aibig.umk.edu.my" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMK-AIBIG</a>
+                    <a href="https://www.ums.edu.my/ibtp/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMS ITBC</a>
+                  </div>
+                </div>
 
-          </div>
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Industry</span>
+                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
+                    <a href="https://riverstone-enviro.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">Riverstone Environmental Sdn Bhd</a>
+                    <a href="https://esgright.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">ESGright Sdn Bhd</a>
+                  </div>
+                </div>
 
-          {/* Cards */}
-          <div className="grid gap-4 md:grid-cols-2">
-            <FounderCard
-              name="Dr Marieanne Leong"
-              role="Founder · Climate Scientist"
-              description="6+ years experience in climate and computing as Senior Lecturer, AI Fellow, Microsoft Tech Mentor, and Certified ESG Reporting Practitioner."
-              highlight="On a mission to turn complex ESG into clarity and practical action."
-              imageSrc="/founders/mae.png"
-              linkedin="https://www.linkedin.com/in/marieanneleong"
-            />
-            <FounderCard
-              name="Dr Laurynas Pukenas"
-              role="Chief Technology Officer"
-              description="6+ years experience in delivering innovative solutions for operations of 3 largest UK railway operators."
-              highlight="On a mission to engineer simplicity without sacrificing power."
-              imageSrc="/founders/laurynas.png"
-              linkedin="https://www.linkedin.com/in/laurynaspukenas"
-            />
-          </div>
-
-        </div>
-      </section>
-
-      <section className="w-full px-4 md:px-6 py-0">
-        <div className="max-w-4xl mx-auto text-center space-y-3">
-
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100">
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
-              Collaborations
-            </span>
-          </div>
-        </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm text-slate-600 mt-4">
-
-          <a
-            href="https://aibig.umk.edu.my"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-emerald-600 transition"
-          >
-            UMK-AIBIG
-          </a>
-
-          <span className="text-slate-300">•</span>
-
-          <a
-            href="https://www.esg-mapan.org.my/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-emerald-600 transition"
-          >
-            ESG-MAPAN
-          </a>
-
-          <span className="text-slate-300">•</span>
-
-          <a
-            href="https://riverstone-enviro.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-emerald-600 transition"
-          >
-            Riverstone Environmental Sdn Bhd
-          </a>
-
-          <span className="text-slate-300">•</span>
-
-          <a
-            href="https://esgright.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-emerald-600 transition"
-          >
-            ESGright Sdn Bhd
-          </a>
+                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                  <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Network</span>
+                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
+                    <a href="https://www.esg-mapan.org.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">ESG-MAPAN</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
         </div>
-
-        </div>
-      </section>
-
-      {/* subtle divider */}
-      <div className="w-25 h-[1px] bg-slate-200 mx-auto mt-10 mb-0"></div>
-
-      {/* ========================= CLOSING ========================= */}
-      <section className="text-center py-10 md:py-25 pb-2 bg-gradient-to-b from-transparent to-emerald-50/40">
-
-        <div className="max-w-2xl mx-auto space-y-4">
-
-          <p className="text-lg md:text-4xl font-medium text-slate-900">
-            ESG is not just reporting.
-            <br />
-          </p>
-          <p className="text-lg md:text-xl text-emerald-600">
-              It's about data you can actually use to make real decisions <br /> in a changing world.
-          </p>
-
-        </div>
-
-      </section>
-
-
-    </div>
+      </div>
+    </>
   );
 }

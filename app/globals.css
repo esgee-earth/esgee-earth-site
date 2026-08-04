@@ -3,7 +3,7 @@
 /* Core CSS variables */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #16232c;
 }
 
 /* Tailwind v4 theme tokens */
@@ -11,13 +11,17 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
 
-  /* Brand colors */
-  --color-brand-teal: #0f766e;     /* river teal */
-  --color-brand-monsoon: #0d9488;  /* monsoon green / teal */
-  --color-brand-earth: #78350f;    /* Borneo earth tone */
+  /* Brand colors — deep ocean / atmosphere palette */
+  --color-brand-navy: #0b1e33;      /* deep space / ocean */
+  --color-brand-teal: #2b7a94;      /* atmosphere — primary accent */
+  --color-brand-monsoon: #1d5a70;   /* darker hover state */
+  --color-brand-brick: #b4472f;     /* warming-stripes red — risk / high-emission accent, used sparingly */
+  --color-brand-canopy: #3f5a44;    /* canopy green — forest scene only, not a global brand color */
+  --color-brand-mist: #eef3f5;      /* cool light tint for section backgrounds */
 
   /* Optional neutrals tuned for your brand */
   --color-shell: #f8fafc;
@@ -36,9 +40,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-data {
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
 /* === Brand background textures === */
@@ -150,6 +162,85 @@ body {
     border-color: rgba(148, 163, 184, 0.35);
     background-color: rgba(15, 23, 42, 0.8);
   }
+}
+
+/* ========================= ATMOSPHERIC JOURNEY SCENES ========================= */
+
+.scene-space {
+  background:
+    radial-gradient(ellipse 60% 50% at 78% 18%, rgba(43, 122, 148, 0.45), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(180, 71, 47, 0.10), transparent 55%),
+    linear-gradient(160deg, #050b14 0%, #0b1e33 45%, #123049 100%);
+}
+
+.scene-space::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.6) 50%, transparent 100%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.4) 50%, transparent 100%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.3) 50%, transparent 100%),
+    radial-gradient(1px 1px at 85% 35%, rgba(255,255,255,0.5) 50%, transparent 100%),
+    radial-gradient(1px 1px at 92% 80%, rgba(255,255,255,0.35) 50%, transparent 100%),
+    radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,0.3) 50%, transparent 100%),
+    radial-gradient(1px 1px at 20% 55%, rgba(255,255,255,0.25) 50%, transparent 100%);
+  background-size: 100% 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.scene-ocean {
+  background: linear-gradient(180deg, #0b1e33 0%, #12405a 45%, #2b7a94 100%);
+}
+
+.scene-wind {
+  background: linear-gradient(120deg, #2b7a94 0%, #6fa8b8 45%, #eef3f5 100%);
+}
+
+.scene-wind::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.16) 0px,
+    rgba(255, 255, 255, 0.16) 2px,
+    transparent 2px,
+    transparent 60px
+  );
+  animation: windDrift 14s linear infinite;
+  pointer-events: none;
+}
+
+.scene-forest {
+  background: linear-gradient(180deg, #12222a 0%, #1c3327 55%, #3f5a44 100%);
+}
+
+.scene-cycle {
+  background: linear-gradient(180deg, #eef3f5 0%, #ffffff 100%);
+}
+
+@keyframes windDrift {
+  from { background-position: 0 0; }
+  to { background-position: 400px 0; }
+}
+
+@keyframes riseFade {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { transform: translateY(-140px); opacity: 0; }
+}
+
+.droplet {
+  position: absolute;
+  bottom: 10%;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.85);
+  animation: riseFade 5s ease-in infinite;
 }
 
 @keyframes handDrag {

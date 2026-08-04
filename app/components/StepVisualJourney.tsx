@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function StepVisualJourney() {
   return (
-    <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 via-white to-emerald-50 shadow-sm px-6 py-8">
+    <div className="rounded-2xl border border-brand-teal/15 bg-gradient-to-br from-brand-mist via-white to-brand-mist shadow-sm px-6 py-8">
 
       <div className="grid md:grid-cols-[1fr_1.3fr] items-center gap-8">
 
@@ -35,7 +35,7 @@ export default function StepVisualJourney() {
           </motion.div>
 
           {/* ESGee */}
-          <div className="h-20 w-20 rounded-full bg-white border border-emerald-300 shadow-sm flex items-center justify-center text-sm font-semibold text-emerald-600 text-center">
+          <div className="h-20 w-20 rounded-full bg-white border border-brand-teal/40 shadow-sm flex items-center justify-center text-sm font-semibold text-brand-teal text-center">
             ESGee<br />Earth
           </div>
 
@@ -50,7 +50,7 @@ export default function StepVisualJourney() {
             transition={{ delay: 1 }}
             className="flex items-center gap-3 whitespace-nowrap"
           >
-            <span className="text-emerald-600 text-lg">✔</span>
+            <span className="text-brand-teal text-lg">✔</span>
             <span>Start simple</span>
           </motion.div>
 
@@ -60,7 +60,7 @@ export default function StepVisualJourney() {
             transition={{ delay: 1.3 }}
             className="flex items-center gap-3 whitespace-nowrap"
           >
-            <span className="text-emerald-600 text-lg">✔</span>
+            <span className="text-brand-teal text-lg">✔</span>
             <span>Track data monthly</span>
           </motion.div>
 
@@ -70,7 +70,7 @@ export default function StepVisualJourney() {
             transition={{ delay: 1.6 }}
             className="flex items-center gap-3 whitespace-nowrap"
           >
-            <span className="text-emerald-600 text-lg">✔</span>
+            <span className="text-brand-teal text-lg">✔</span>
             <span>No ESG expertise needed</span>
           </motion.div>
 

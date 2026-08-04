@@ -1,19 +1,35 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "./components/Header";
-import { Inter } from "next/font/google";
+import { Fraunces, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { EnvelopeIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { Analytics } from "@vercel/analytics/next"
 
-const inter = Inter({
+const fraunces = Fraunces({
   subsets: ["latin"],
+  variable: "--font-display",
   display: "swap",
+  weight: ["400", "500", "600"],
+});
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "ESGee Earth – Practical ESG & carbon clarity",
+  title: "ESGee Earth – Climate & Nature Risk Intelligence",
   description:
-    "SME-first ESG and carbon workspace that turns everyday records into buyer-ready data, aligned with GHG Protocol, IFRS S2 and Bursa SEDG.",
+    "Climate and nature risk intelligence for disclosure-driven organisations — translating climate science and nature risks into financial and operational decisions.",
 };
 
 export default function RootLayout({
@@ -23,13 +39,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-50 text-slate-900`}>
+      <body className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} bg-slate-50 text-slate-900`}>
         <a id="top" />
         <Header />
         <main className="mt-4">{children}</main>
         <Analytics />
 
-        <footer className="mt-0 bg-emerald-50/40 border-t border-emerald-100 pt-4 pb-6 text-xs text-slate-600">
+        <footer className="mt-20 bg-brand-mist/70 border-t border-brand-teal/15 pt-8 pb-8 text-xs text-slate-600">
           <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
 
             {/* Left side – copyright */}
