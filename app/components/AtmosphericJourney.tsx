@@ -82,7 +82,7 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
   const opacityForest = useChapterOpacity(scrollYProgress, 3);
   const opacities = [opacitySpace, opacityOcean, opacityWind, opacityForest];
   const labels = [
-    " ·  · ",
+    "GOES-19 · FULL DISK · GEOCOLOR",
     "SEA SURFACE · DATA ORIGIN",
     "ATMOSPHERIC TRANSPORT",
     "CANOPY · GROUND TRUTH",
@@ -138,7 +138,10 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
           )}
         </motion.div>
 
-        <div className="absolute top-6 left-6 md:top-8 md:left-8 font-data text-[10px] tracking-[0.25em] uppercase">
+        {/* Telemetry-style corner labels — kept in code (drives `labels`/`opacities` above)
+            but not rendered on the live site; out-of-place jargon for visitors.
+            Re-enable by uncommenting the block below if wanted later. */}
+        {/* <div className="absolute top-6 left-6 md:top-8 md:left-8 font-data text-[10px] tracking-[0.25em] uppercase">
           {labels.map((label, i) => (
             <motion.span
               key={label}
@@ -148,7 +151,7 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
               {label}
             </motion.span>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="relative z-10 -mt-[100vh]">

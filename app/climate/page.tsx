@@ -13,7 +13,7 @@ export default function ClimatePage() {
     <div className="mx-auto max-w-5xl px-4 py-12 space-y-10">
 
       {/* HEADER */}
-      <div className="text-center space-y-4 max-w-2xl mx-auto">
+      <div className="text-center space-y-5 max-w-2xl mx-auto">
         <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 border border-emerald-100 text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
           Climate Impact Engine
         </span>

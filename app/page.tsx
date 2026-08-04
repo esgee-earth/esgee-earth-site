@@ -6,7 +6,8 @@ import ClimateRiskSnapshot from "@/app/components/ClimateRiskSnapshot";
 import WarmingStripes from "@/app/components/WarmingStripes";
 import { AtmosphericJourney } from "@/app/components/AtmosphericJourney";
 import { ScrollCrossfadeStack } from "@/app/components/ScrollCrossfadeStack";
-import { CloudSun, TreePine, Database, HeartHandshake, Factory, DollarSign, FileText } from "lucide-react";
+import { Factory, DollarSign, FileText, GraduationCap, Building2, Users } from "lucide-react";
+import { WhatWeDoAccordion } from "@/app/components/WhatWeDoAccordion";
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
 
         {/* ===================== CHAPTER 2 — WHERE THE DATA STARTS ===================== */}
         <section className="min-h-screen flex items-center justify-center px-6">
-          <div className="max-w-2xl text-center space-y-4">
+          <div className="max-w-2xl text-center space-y-5">
             <h2 className="font-display text-lg md:text-2xl font-medium text-white">
               A quieter truth about climate risk
             </h2>
@@ -79,100 +80,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="divide-y divide-slate-100">
-
-              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
-                <div className="flex items-start gap-3">
-                  <span className="font-data text-2xl text-brand-teal/25 leading-none">01</span>
-                  <div className="flex items-center gap-2 pt-0.5">
-                    <CloudSun className="w-4 h-4 text-brand-teal shrink-0" />
-                    <h3 className="font-display font-medium text-slate-900">
-                      Climate &amp; Nature Risk
-                    </h3>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-600">
-                    Physical and transition climate risk, scenario analysis, and nature-related risk for
-                    regulatory disclosures (e.g. IFRS S2/TCFD/TNFD), SBTi-aligned net zero &amp; transition planning,
-                    and operational &amp; strategic planning.
-                  </p>
-                  <a href="/climate" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
-                    Explore the Climate Impact Engine (preview) →
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
-                <div className="flex items-start gap-3">
-                  <span className="font-data text-2xl text-brand-teal/25 leading-none">02</span>
-                  <div className="flex items-center gap-2 pt-0.5">
-                    <TreePine className="w-4 h-4 text-brand-teal shrink-0" />
-                    <h3 className="font-display font-medium text-slate-900">
-                      Carbon Project Development
-                    </h3>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-600">
-                    Carbon credit project development and carbon stock assessment: from
-                    satellite-based feasibility screening through field verification and
-                    methodology design.
-                  </p>
-                  <a href="/contact" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
-                    Talk to us →
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
-                <div className="flex items-start gap-3">
-                  <span className="font-data text-2xl text-brand-teal/25 leading-none">03</span>
-                  <div className="flex items-center gap-2 pt-0.5">
-                    <Database className="w-4 h-4 text-brand-teal shrink-0" />
-                    <h3 className="font-display font-medium text-slate-900">
-                      ESG Data Systems
-                    </h3>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-600">
-                    We structure environmental data so it can be used for reporting,
-                    operations, and compliance with IFRS, GRI and related frameworks.
-                  </p>
-                  <a href="/sme" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
-                    See the SME preview →
-                  </a>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-[220px_1fr] gap-3 md:gap-8 p-6 md:p-8">
-                <div className="flex items-start gap-3">
-                  <span className="font-data text-2xl text-brand-teal/25 leading-none">04</span>
-                  <div className="pt-0.5">
-                    <div className="flex items-center gap-2">
-                      <HeartHandshake className="w-4 h-4 text-brand-teal shrink-0" />
-                      <h3 className="font-display font-medium text-slate-900">
-                        Climate Action Sabah
-                      </h3>
-                    </div>
-                    <span className="inline-block text-[10px] font-medium uppercase tracking-wide text-slate-400 mt-1">
-                      Community Initiative
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <p className="text-sm text-slate-600">
-                    Community environmental knowledge, digital storytelling, and citizen
-                    science across Sabah.
-                  </p>
-                  <a href="/climate-action-sabah" className="mt-2 inline-block text-sm text-brand-teal hover:underline">
-                    Learn more →
-                  </a>
-                </div>
-              </div>
-
-            </div>
+            <WhatWeDoAccordion />
           </div>
         </section>
 
@@ -188,7 +96,7 @@ export default function Home() {
               </p>
             </div>,
 
-            <div key="b" className="max-w-2xl text-center space-y-3">
+            <div key="b" className="max-w-2xl text-center space-y-5">
               <h2 className="font-display text-xl md:text-3xl font-medium text-white">
                 From raw climate and nature models to a boardroom-ready signal
               </h2>
@@ -252,11 +160,11 @@ export default function Home() {
               <StepVisualJourney />
             </div>,
 
-            <div key="e" className="max-w-2xl mx-auto text-center space-y-3">
+            <div key="e" className="max-w-2xl mx-auto text-center space-y-5">
               <p className="font-display text-lg md:text-4xl font-medium text-white">
                 ESG is not just reporting.
               </p>
-              <p className="text-lg md:text-xl text-brand-teal">
+              <p className="text-lg md:text-xl text-brand-teal-bright font-medium">
                 It&apos;s about data you can actually use to make real decisions in a changing
                 world — monitored continuously, not reported once.
               </p>
@@ -335,8 +243,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-3 mt-4 text-left">
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
+              <div className="grid gap-4 md:grid-cols-3 mt-4">
+                <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col items-center text-center">
+                  <div className="w-10 h-10 rounded-full bg-brand-teal/10 flex items-center justify-center mb-2">
+                    <GraduationCap className="w-5 h-5 text-brand-teal" />
+                  </div>
                   <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Academic</span>
                   <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
                     <a href="https://trace.umk.edu.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMK-TRaCe</a>
@@ -345,7 +256,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col items-center text-center">
+                  <div className="w-10 h-10 rounded-full bg-brand-brick/10 flex items-center justify-center mb-2">
+                    <Building2 className="w-5 h-5 text-brand-brick" />
+                  </div>
                   <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Industry</span>
                   <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
                     <a href="https://riverstone-enviro.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">Riverstone Environmental Sdn Bhd</a>
@@ -353,7 +267,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-200 bg-white p-5 flex flex-col items-center text-center">
+                  <div className="w-10 h-10 rounded-full bg-brand-monsoon/10 flex items-center justify-center mb-2">
+                    <Users className="w-5 h-5 text-brand-monsoon" />
+                  </div>
                   <span className="text-[10px] font-medium uppercase tracking-wide text-slate-400">Network</span>
                   <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
                     <a href="https://www.esg-mapan.org.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">ESG-MAPAN</a>
