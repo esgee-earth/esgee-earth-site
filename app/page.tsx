@@ -75,7 +75,7 @@ export default function Home() {
               </h2>
               <p className="text-sm text-slate-700 mt-2">
                 Climate and nature risk don&apos;t live in one place. They move through science,
-                disclosure, and the ground itself. And that is where our work lies.
+                disclosure, and the ground itself. And that is exactly where our work lies.
               </p>
             </div>
 
