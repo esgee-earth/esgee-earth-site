@@ -82,7 +82,7 @@ export default function OutlookPage() {
             What a <span className="text-brand-brick">very strong El Niño</span> means for Malaysia
           </h1>
 
-          <p className="text-sm md:text-base text-slate-300 max-w-5xl mb-9 leading-relaxed">
+          <p className="text-sm md:text-base text-slate-300 max-w-4xl mb-9 leading-relaxed">
             What to expect on heat, drought and haze from November 2026 to
             January 2027, and what it could mean for manufacturing and
             agriculture or plantation operations.
@@ -237,14 +237,13 @@ export default function OutlookPage() {
           Risk by month
         </h2>
         <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
-          Shown for Sabah by default, since it carries the deepest signal
-          of any state we tracked. These risks are computed for all six states
-          and regions in our pipeline. Each
-          month is compared to what is normal for that specific month.
-          The average shown is across five past very strong events (
-          {COMPOSITE_YEARS.join(", ")}). The Haze row (marked with *) is a
-          general estimate based on typical fire season patterns in the
-          region, not state-specific pipeline output.
+          Sabah carries the deepest signal of any state we tracked. The shape is 
+          worth noting: both risks stay mild in November,
+          then build steadily and do not peak until March, later than the
+          Nov to Jan window this outlook is framed around might suggest.
+          Drought spikes once in January, eases slightly, then peaks
+          again in March. Other states follow different timing, some peak
+          earlier, some barely move at all. 
         </p>
 
         <div className="mt-5 max-w-5xl">
@@ -252,13 +251,13 @@ export default function OutlookPage() {
         </div>
 
         <p className="text-sm text-slate-600 mt-4 max-w-5xl leading-relaxed">
-          Notice the pattern for Sabah: both risks are mildest in November,
-          then build steadily, and peak later than most people would
-          expect. Heat peaks in March, and drought also peaks in March
-          with an earlier spike in January. Stopping the analysis at
-          January would have missed the worst of it. Other states follow
-          different shapes, worth checking individually if you operate
-          outside Sabah.
+          Note that this is a diagnostic view, not a forecast. It is the
+          average of what actually happened, month by month, across five
+          past El Nino events at this same strength ({COMPOSITE_YEARS.join(", ")}),
+          each compared to what is normal for that particular month. Haze
+          follows the region&apos;s general fire season timing rather
+          than state level data, since that is not part of the pipeline
+          yet.
         </p>
       </section>
 
@@ -308,7 +307,7 @@ export default function OutlookPage() {
             <span className="font-data text-brand-brick mr-2">04</span>
             What this means for manufacturing
           </h2>
-          <span className="shrink-0 rounded-full border border-brand-brick text-brand-brick font-semibold font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
+          <span className="shrink-0 rounded-full border border-brand-brick font-semibold text-brand-brick font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
             Heat and water risk
           </span>
         </div>
@@ -359,7 +358,7 @@ export default function OutlookPage() {
             <span className="font-data text-brand-brick mr-2">05</span>
             What this means for agriculture and plantations
           </h2>
-          <span className="shrink-0 rounded-full border border-amber-600 text-amber-700 font-semibold font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
+          <span className="shrink-0 rounded-full border border-amber-600 font-semibold text-amber-700 font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
             Drought and delayed yield risk
           </span>
         </div>
