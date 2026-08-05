@@ -42,10 +42,10 @@ export default function RootLayout({
       <body className={`${fraunces.variable} ${plexSans.variable} ${plexMono.variable} bg-slate-50 text-slate-900`}>
         <a id="top" />
         <Header />
-        <main className="mt-4">{children}</main>
+        <main>{children}</main>
         <Analytics />
 
-        <footer className="mt-20 bg-brand-mist/70 border-t border-brand-teal/15 pt-8 pb-8 text-xs text-slate-600">
+        <footer className="bg-brand-mist/70 border-t border-brand-teal/15 pt-8 pb-8 text-xs text-slate-600">
           <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
 
             {/* Left side – copyright */}

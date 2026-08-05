@@ -81,7 +81,16 @@ export default function ClimateActionSabah() {
 
           {/* Grant */}
           <p className="text-sm text-slate-500 mt-10 max-w-3xl mx-auto">
-            This work is supported by the British Council Alumni UK Climate Action Grant (2025), enabling community-based climate engagement in Sabah.
+            This work is supported by the{" "}
+            <a
+              href="https://www.britishcouncil.org/study-work-abroad/alumni-uk/alumni-opportunities-initiatives/climate-action-grants/ca-update/malaysia2#:~:text=Malaysia%20Innovating%20Indigenous%20Conservation%3A%20Digital&text=Malaysia%20Innovating%20Indigenous%20Conservation%3A%20Digital,Resilience%20and%20a%20Just%20Transition"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-600 hover:underline"
+            >
+              British Council Alumni UK Climate Action Grant (2025)
+            </a>
+            , enabling community-based climate engagement in Sabah.
           </p>
 
           {/* Collaboration */}

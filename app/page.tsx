@@ -1,13 +1,16 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import StepVisualJourney from "@/app/components/StepVisualJourney";
 import FounderCard from "@/app/components/FounderCard";
 import ClimateRiskSnapshot from "@/app/components/ClimateRiskSnapshot";
 import WarmingStripes from "@/app/components/WarmingStripes";
 import { AtmosphericJourney } from "@/app/components/AtmosphericJourney";
 import { ScrollCrossfadeStack } from "@/app/components/ScrollCrossfadeStack";
-import { Factory, DollarSign, FileText, GraduationCap, Building2, Users } from "lucide-react";
-import { WhatWeDoAccordion } from "@/app/components/WhatWeDoAccordion";
+import { Factory, DollarSign, FileText, GraduationCap, Building2, Users, HeartHandshake } from "lucide-react";
+import { WhatWeDoCards } from "@/app/components/WhatWeDoCards";
+import { CommunityScene } from "@/app/components/CommunityScene";
 
 export default function Home() {
   return (
@@ -39,30 +42,65 @@ export default function Home() {
 
         {/* ===================== CHAPTER 2 — WHERE THE DATA STARTS ===================== */}
         <section className="min-h-screen flex items-center justify-center px-6">
-          <div className="max-w-2xl text-center space-y-5">
-            <h2 className="font-display text-lg md:text-2xl font-medium text-white">
-              A quieter truth about climate risk
-            </h2>
-            <p className="text-sm text-white/75 leading-relaxed">
-              Climate and nature risk disclosure is often treated as a compliance exercise.
-              But the real work happens earlier, in the science itself.
-            </p>
-            <p className="text-sm text-white/75 leading-relaxed">
-              Before IFRS S2/TCFD, before TNFD, before scenario tables, there is raw model output,
-              incomplete rainfall records, and ecological data that was never meant for a
-              spreadsheet.
-            </p>
-            <p className="text-base text-white font-medium">
-              Messy. Incomplete. Unstructured.
-            </p>
-            <p className="text-sm text-white/75 leading-relaxed">
+          <div className="max-w-3xl text-center space-y-5">
+            <motion.h2
+              className="font-display text-lg md:text-2xl font-medium text-white"
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6 }}
+            >
+              Where disclosure actually starts
+            </motion.h2>
+            <motion.p
+              className="text-sm text-white/75 leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              Most sustainability disclosure starts with events, spreadsheets, bills, and supplier records that
+              don't match up.
+            </motion.p>
+            <motion.p
+              className="text-sm text-white/75 leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 1, delay: 0.9 }}
+            >
+              Even once that&apos;s sorted, the climate science behind your risk numbers has the same
+              problem:
+            </motion.p>
+            <motion.p
+              className="text-base text-white font-medium"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8, delay: 1.3 }}
+            >
+              Raw data. Inadequate coverage. High uncertainties.
+            </motion.p>
+            <motion.p
+              className="text-sm text-white/75 leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 1, delay: 1.6 }}
+            >
               And yet, this is what boards are asked to make decisions on. Frameworks like
-              IFRS S2 and TNFD aren&apos;t asking for better narratives — they&apos;re asking for
+              IFRS S2 and TNFD aren&apos;t asking for better narratives. They&apos;re asking for
               physically grounded, decision-useful signals.
-            </p>
-            <p className="text-base font-medium text-white">
+            </motion.p>
+            <motion.p
+              className="text-base font-medium text-white"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.8, delay: 2 }}
+            >
               That&apos;s where the science comes in.
-            </p>
+            </motion.p>
           </div>
         </section>
 
@@ -80,7 +118,7 @@ export default function Home() {
               </p>
             </div>
 
-            <WhatWeDoAccordion />
+            <WhatWeDoCards />
           </div>
         </section>
 
@@ -252,7 +290,7 @@ export default function Home() {
                   <div className="mt-2 flex flex-col gap-1.5 text-sm text-slate-600">
                     <a href="https://trace.umk.edu.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMK-TRaCe</a>
                     <a href="https://aibig.umk.edu.my" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMK-AIBIG</a>
-                    <a href="https://www.ums.edu.my/ibtp/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMS ITBC</a>
+                    <a href="https://www.ums.edu.my/ibtp/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal transition">UMS-ITBC</a>
                   </div>
                 </div>
 
@@ -281,6 +319,50 @@ export default function Home() {
           </section>
 
         </div>
+
+        {/* ========================= BEYOND THE CLIENT WORK (full-bleed, illustrated) ========================= */}
+        <CommunityScene>
+          <div className="max-w-4xl mx-auto text-center space-y-4">
+            <div className="flex justify-center">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 border border-brand-teal/15">
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal">
+                  Beyond the Client Work
+                </span>
+              </div>
+            </div>
+
+            <h2 className="font-display text-xl md:text-2xl font-medium text-slate-900">
+              Climate and nature risk isn&apos;t just a line in a disclosure report
+            </h2>
+
+            <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
+              It&apos;s lived, every monsoon season, by the communities we come from. 
+              Climate Action Sabah is how we give back.
+            </p>
+            <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
+              We advocate for and promote community science, digital storytelling, and
+              citizen science across Sabah and beyond.
+            </p>
+            <p className="text-sm md:text-[14px] text-slate-700 max-w-3xl mx-auto">
+              Because a better climate future has to include the people already living it.
+            </p>
+
+            <div className="rounded-2xl border border-slate-200 bg-white/95 backdrop-blur-sm p-6 md:p-8 max-w-xl mx-auto flex flex-col items-center text-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-brand-teal/10 flex items-center justify-center">
+                <HeartHandshake className="w-5 h-5 text-brand-teal" />
+              </div>
+              <h3 className="font-display font-medium text-slate-900">Climate Action Sabah</h3>
+              <p className="text-sm text-slate-600">
+                Supported by the British Council Alumni UK Climate Action Grant, in
+                collaboration with UMK-TRaCe.
+              </p>
+              <a href="/climate-action-sabah" className="text-sm text-brand-teal hover:underline">
+                Learn more →
+              </a>
+            </div>
+          </div>
+        </CommunityScene>
+
       </div>
     </>
   );
