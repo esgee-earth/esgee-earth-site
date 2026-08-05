@@ -82,7 +82,7 @@ export default function OutlookPage() {
             What a <span className="text-brand-brick">very strong El Niño</span> means for Malaysia
           </h1>
 
-          <p className="text-sm md:text-base text-slate-300 max-w-xl mb-9 leading-relaxed">
+          <p className="text-sm md:text-base text-slate-300 max-w-5xl mb-9 leading-relaxed">
             What to expect on heat, drought and haze from November 2026 to
             January 2027, and what it could mean for manufacturing and
             agriculture or plantation operations.
@@ -177,7 +177,7 @@ export default function OutlookPage() {
           <span className="font-data text-brand-brick mr-2">01</span>
           Key risks at a glance
         </h2>
-        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
           NOAA and the US Climate Prediction Center issued an El Nino
           Advisory in June 2026, when they put the odds of a very strong
           event (ONI at or above 2.0°C) at around {VERY_STRONG_ODDS.asOfJune}%.
@@ -189,7 +189,7 @@ export default function OutlookPage() {
           Society, using 23 of 26 models, also points to a very strong
           event.
         </p>
-        <div className="grid gap-4 md:grid-cols-3 mt-5 max-w-3xl">
+        <div className="grid gap-4 md:grid-cols-3 mt-5 max-w-5xl">
           {[
             {
               label: "Heat",
@@ -217,7 +217,7 @@ export default function OutlookPage() {
             </div>
           ))}
         </div>
-        <div className="mt-4 max-w-3xl rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+        <div className="mt-4 max-w-5xl rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
           <p className="text-xs text-amber-900 leading-relaxed">
             <strong>This outlook currently covers heat, drought and haze.</strong>{" "}
             It does not yet cover short, intense rainfall events that can
@@ -236,23 +236,22 @@ export default function OutlookPage() {
           <span className="font-data text-brand-brick mr-2">02</span>
           Risk by month
         </h2>
-        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
           Shown for Sabah by default, since it carries the deepest signal
-          of any state we tracked. This was computed for all six states
-          and regions in our pipeline, use the tabs below to switch. Each
-          month is compared to what is normal for that specific month,
-          since November and March are naturally very different seasons.
+          of any state we tracked. These risks are computed for all six states
+          and regions in our pipeline. Each
+          month is compared to what is normal for that specific month.
           The average shown is across five past very strong events (
           {COMPOSITE_YEARS.join(", ")}). The Haze row (marked with *) is a
           general estimate based on typical fire season patterns in the
           region, not state-specific pipeline output.
         </p>
 
-        <div className="mt-5 max-w-3xl">
+        <div className="mt-5 max-w-5xl">
           <MonthlyTimeline />
         </div>
 
-        <p className="text-sm text-slate-600 mt-4 max-w-3xl leading-relaxed">
+        <p className="text-sm text-slate-600 mt-4 max-w-5xl leading-relaxed">
           Notice the pattern for Sabah: both risks are mildest in November,
           then build steadily, and peak later than most people would
           expect. Heat peaks in March, and drought also peaks in March
@@ -269,7 +268,7 @@ export default function OutlookPage() {
           <span className="font-data text-brand-brick mr-2">03</span>
           What happened last time
         </h2>
-        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
           1997 to 98 (ONI {ONI.y1997}°C) and 2015 to 16 (ONI {ONI.y2015}°C)
           are the only past events this strong with reliable satellite
           records. The 5-event average is based on every past event that
@@ -294,7 +293,7 @@ export default function OutlookPage() {
         <p className="text-xs text-slate-500 mt-4 max-w-3xl leading-relaxed">
           Haze was severe in both past events (September to November 1997,
           and September to October 2015). Water rationing was confirmed in
-          the Klang Valley in 1998, with localized reports again in 2016.
+          the Klang Valley in 1998, with localised reports again in 2016.
           Interestingly, Sarawak and Pulau Pinang both saw slightly more
           rain than normal in 2015 to 16, even though the overall event was
           severe. A statewide average can hide a flooded district sitting
@@ -309,7 +308,7 @@ export default function OutlookPage() {
             <span className="font-data text-brand-brick mr-2">04</span>
             What this means for manufacturing
           </h2>
-          <span className="shrink-0 rounded-full border border-brand-brick text-brand-brick font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
+          <span className="shrink-0 rounded-full border border-brand-brick text-brand-brick font-semibold font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
             Heat and water risk
           </span>
         </div>
@@ -320,7 +319,7 @@ export default function OutlookPage() {
         </p>
         <div className="grid md:grid-cols-2 gap-6 mt-5 text-sm">
           <div>
-            <p className="font-data text-[10px] uppercase tracking-[0.08em] text-slate-500 mb-2">What to watch</p>
+            <p className="font-data text-[10px] uppercase tracking-[0.08em] font-semibold text-brand-brick mb-2">What to watch</p>
             <ul className="space-y-2 text-slate-700 list-disc list-inside">
               <li>
                 Workers outdoors or in non-air-conditioned areas face higher
@@ -337,7 +336,7 @@ export default function OutlookPage() {
             </ul>
           </div>
           <div>
-            <p className="font-data text-[10px] uppercase tracking-[0.08em] text-slate-500 mb-2">When to plan for</p>
+            <p className="font-data text-[10px] uppercase tracking-[0.08em] font-semibold text-blue-500 mb-2">When to plan for</p>
             <ul className="space-y-2 text-slate-700 list-disc list-inside">
               <li>Peak exposure: November 2026 to January 2027</li>
               <li>Water stress risk could continue into early 2027</li>
@@ -360,7 +359,7 @@ export default function OutlookPage() {
             <span className="font-data text-brand-brick mr-2">05</span>
             What this means for agriculture and plantations
           </h2>
-          <span className="shrink-0 rounded-full border border-amber-600 text-amber-700 font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
+          <span className="shrink-0 rounded-full border border-amber-600 text-amber-700 font-semibold font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
             Drought and delayed yield risk
           </span>
         </div>
@@ -371,7 +370,7 @@ export default function OutlookPage() {
         </p>
         <div className="grid md:grid-cols-2 gap-6 mt-5 text-sm">
           <div>
-            <p className="font-data text-[10px] uppercase tracking-[0.08em] text-slate-500 mb-2">What to watch</p>
+            <p className="font-data text-[10px] uppercase tracking-[0.08em] font-semibold text-brand-brick mb-2">What to watch</p>
             <ul className="space-y-2 text-slate-700 list-disc list-inside">
               <li>
                 Rainfall could run well below normal from November to
@@ -393,7 +392,7 @@ export default function OutlookPage() {
             </ul>
           </div>
           <div>
-            <p className="font-data text-[10px] uppercase tracking-[0.08em] text-slate-500 mb-2">When to plan for</p>
+            <p className="font-data text-[10px] uppercase tracking-[0.08em] font-semibold text-blue-500 mb-2">When to plan for</p>
             <ul className="space-y-2 text-slate-700 list-disc list-inside">
               <li>Drought signal now: November 2026 to January 2027</li>
               <li>Yield impact expected: mid to late 2027</li>
