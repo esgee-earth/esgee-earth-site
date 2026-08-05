@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
+import MonthlyTimeline from "./MonthlyTimeline";
 import {
   RAINFALL_ANOMALY_PCT,
   TEMP_ANOMALY_C,
-  MONTHLY_TIMELINE,
-  SEVERITY_STYLES,
   ONI,
   LATEST_ONI,
   VERY_STRONG_ODDS,
   COMPOSITE_YEARS,
   type AnalogValue,
-  type TimelineCell,
 } from "./data";
 
 export const metadata: Metadata = {
@@ -67,20 +65,6 @@ function AnalogTable({ title, data, kind }: { title: string; data: Record<string
   );
 }
 
-function TimelineRow({ label, data }: { label: string; data: TimelineCell[] }) {
-  return (
-    <div className="grid grid-cols-[80px_repeat(6,1fr)] gap-1.5 mb-1.5">
-      <div className="flex items-center font-data text-[10px] uppercase text-slate-500">{label}</div>
-      {data.map((cell, i) => (
-        <div key={i} className={`rounded-md text-white text-center py-2 px-1 ${SEVERITY_STYLES[cell.level]}`}>
-          <span className="block font-data text-[9px] uppercase font-semibold">{cell.level}</span>
-          {cell.value && <span className="block font-data text-[9px] opacity-85 mt-0.5">{cell.value}</span>}
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export default function OutlookPage() {
   const oniPct = (v: number) => ((v - 0.5) / 2.5) * 100;
 
@@ -118,10 +102,46 @@ export default function OutlookPage() {
             ))}
           </div>
 
+          {/* ---- ONI gauge card ---- */}
           <div className="rounded-xl bg-white/5 border border-white/10 p-5">
-            <p className="font-data text-[10px] uppercase tracking-[0.14em] text-brand-teal-bright mb-4">
-              Ocean Nino Index (ONI): how strong is this event?
-            </p>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-6">
+              <p className="font-data text-[10px] uppercase tracking-[0.14em] text-brand-teal-bright">
+                Ocean Nino Index (ONI): how strong is this event?
+              </p>
+              <div className="flex items-baseline gap-2">
+                <span className="font-data text-2xl font-bold text-amber-400">{VERY_STRONG_ODDS.asOfJuly}%</span>
+                <span className="text-xs text-slate-300">chance of very strong, {VERY_STRONG_ODDS.peakWindow}</span>
+              </div>
+            </div>
+
+            {/* Tag row: real height, sits above the bar in normal flow so
+                it cannot overlap the title above it, regardless of which
+                x-position a tag lands on. */}
+            <div className="relative h-9 mb-1">
+              <div
+                className="absolute bottom-0 -translate-x-1/2 whitespace-nowrap rounded bg-brand-navy border border-white/15 px-1.5 py-0.5 font-data text-[9px]"
+                style={{ left: `${oniPct(ONI.y1997)}%` }}
+              >
+                1997 to 98: {ONI.y1997}°C
+              </div>
+              <div
+                className="absolute bottom-0 -translate-x-1/2 whitespace-nowrap rounded bg-brand-navy border border-white/15 px-1.5 py-0.5 font-data text-[9px]"
+                style={{ left: `${oniPct(ONI.y2015)}%` }}
+              >
+                2015 to 16: {ONI.y2015}°C
+              </div>
+              <div
+                className="absolute bottom-0 -translate-x-1/2 whitespace-nowrap rounded bg-amber-400 text-brand-navy px-1.5 py-0.5 font-data text-[9px] font-semibold flex items-center gap-1.5"
+                style={{ left: `${oniPct(LATEST_ONI.value)}%` }}
+              >
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-60" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-navy" />
+                </span>
+                Now: {LATEST_ONI.value}°C ({LATEST_ONI.label})
+              </div>
+            </div>
+
             <div
               className="relative h-2.5 rounded-full mb-2 mx-1"
               style={{
@@ -129,31 +149,9 @@ export default function OutlookPage() {
                   "linear-gradient(to right, #1d5a70 0%, #1d5a70 16%, #6e5b3e 16%, #6e5b3e 36%, #9a5a34 36%, #9a5a34 56%, #b4472f 56%, #7a2c1c 100%)",
               }}
             >
-              <div className="absolute -top-3.5 w-0.5 h-9 bg-white/85" style={{ left: `${oniPct(ONI.y1997)}%` }} />
-              <div
-                className="absolute -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-brand-navy border border-white/15 px-1.5 py-0.5 font-data text-[9px]"
-                style={{ left: `${oniPct(ONI.y1997)}%` }}
-              >
-                1997 to 98: {ONI.y1997}°C
-              </div>
-              <div className="absolute -top-3.5 w-0.5 h-9 bg-white/85" style={{ left: `${oniPct(ONI.y2015)}%` }} />
-              <div
-                className="absolute -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-brand-navy border border-white/15 px-1.5 py-0.5 font-data text-[9px]"
-                style={{ left: `${oniPct(ONI.y2015)}%` }}
-              >
-                2015 to 16: {ONI.y2015}°C
-              </div>
-              <div className="absolute -top-3.5 w-0.5 h-9 bg-amber-400" style={{ left: `${oniPct(LATEST_ONI.value)}%` }} />
-              <div
-                className="absolute -top-8 -translate-x-1/2 whitespace-nowrap rounded bg-amber-400 text-brand-navy px-1.5 py-0.5 font-data text-[9px] font-semibold flex items-center gap-1.5"
-                style={{ left: `${oniPct(LATEST_ONI.value)}%` }}
-              >
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-navy" />
-                </span>
-                Now ({LATEST_ONI.period}): {LATEST_ONI.value}°C
-              </div>
+              <div className="absolute -top-2 w-0.5 h-4 bg-white/85" style={{ left: `${oniPct(ONI.y1997)}%` }} />
+              <div className="absolute -top-2 w-0.5 h-4 bg-white/85" style={{ left: `${oniPct(ONI.y2015)}%` }} />
+              <div className="absolute -top-2 w-0.5 h-4 bg-amber-400" style={{ left: `${oniPct(LATEST_ONI.value)}%` }} />
             </div>
             <div className="flex justify-between font-data text-[9px] uppercase tracking-[0.05em] text-slate-400 mt-7 px-1">
               <span>Weak</span>
@@ -179,7 +177,7 @@ export default function OutlookPage() {
           <span className="font-data text-brand-brick mr-2">01</span>
           Key risks at a glance
         </h2>
-        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
           NOAA and the US Climate Prediction Center issued an El Nino
           Advisory in June 2026, when they put the odds of a very strong
           event (ONI at or above 2.0°C) at around {VERY_STRONG_ODDS.asOfJune}%.
@@ -191,7 +189,7 @@ export default function OutlookPage() {
           Society, using 23 of 26 models, also points to a very strong
           event.
         </p>
-        <div className="grid gap-4 md:grid-cols-3 mt-5 max-w-5xl">
+        <div className="grid gap-4 md:grid-cols-3 mt-5 max-w-3xl">
           {[
             {
               label: "Heat",
@@ -219,15 +217,59 @@ export default function OutlookPage() {
             </div>
           ))}
         </div>
+        <div className="mt-4 max-w-3xl rounded-xl bg-amber-50 border border-amber-200 px-4 py-3">
+          <p className="text-xs text-amber-900 leading-relaxed">
+            <strong>This outlook currently covers heat, drought and haze.</strong>{" "}
+            It does not yet cover short, intense rainfall events that can
+            cause flash flooding, even during an overall dry stretch. Past
+            El Nino events have produced both drought and sudden flooding
+            in the same season, sometimes in the same state (see the
+            rainfall table below). We are analysing rainfall extremes
+            separately and will add that here once it is ready.
+          </p>
+        </div>
       </section>
 
-      {/* ================= 02 WHAT HAPPENED LAST TIME ================= */}
+      {/* ================= 02 RISK BY MONTH ================= */}
       <section>
         <h2 className="text-xl font-semibold text-slate-900 mb-3">
           <span className="font-data text-brand-brick mr-2">02</span>
+          Risk by month
+        </h2>
+        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
+          Shown for Sabah by default, since it carries the deepest signal
+          of any state we tracked. This was computed for all six states
+          and regions in our pipeline, use the tabs below to switch. Each
+          month is compared to what is normal for that specific month,
+          since November and March are naturally very different seasons.
+          The average shown is across five past very strong events (
+          {COMPOSITE_YEARS.join(", ")}). The Haze row (marked with *) is a
+          general estimate based on typical fire season patterns in the
+          region, not state-specific pipeline output.
+        </p>
+
+        <div className="mt-5 max-w-3xl">
+          <MonthlyTimeline />
+        </div>
+
+        <p className="text-sm text-slate-600 mt-4 max-w-3xl leading-relaxed">
+          Notice the pattern for Sabah: both risks are mildest in November,
+          then build steadily, and peak later than most people would
+          expect. Heat peaks in March, and drought also peaks in March
+          with an earlier spike in January. Stopping the analysis at
+          January would have missed the worst of it. Other states follow
+          different shapes, worth checking individually if you operate
+          outside Sabah.
+        </p>
+      </section>
+
+      {/* ================= 03 WHAT HAPPENED LAST TIME ================= */}
+      <section>
+        <h2 className="text-xl font-semibold text-slate-900 mb-3">
+          <span className="font-data text-brand-brick mr-2">03</span>
           What happened last time
         </h2>
-        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
+        <p className="text-sm text-slate-600 max-w-3xl leading-relaxed">
           1997 to 98 (ONI {ONI.y1997}°C) and 2015 to 16 (ONI {ONI.y2015}°C)
           are the only past events this strong with reliable satellite
           records. The 5-event average is based on every past event that
@@ -236,8 +278,8 @@ export default function OutlookPage() {
           guaranteed forecast for 2026 to 27.
         </p>
 
-        <div className="mt-6 rounded-xl bg-brand-navy text-white p-5 flex flex-wrap items-baseline gap-4 max-w-5xl">
-          <span className="font-data text-5xl font-bold text-brand-brick">-37%</span>
+        <div className="mt-6 rounded-xl bg-brand-navy text-white p-5 flex flex-wrap items-baseline gap-4 max-w-3xl">
+          <span className="font-data text-4xl font-bold text-brand-brick">-37%</span>
           <p className="text-xs text-slate-300 flex-1 min-w-[220px] leading-relaxed">
             How far below normal Sabah&apos;s rainfall ran on average across
             five past very strong El Nino events. It is the deepest drop of
@@ -260,11 +302,11 @@ export default function OutlookPage() {
         </p>
       </section>
 
-      {/* ================= 03 MANUFACTURING ================= */}
+      {/* ================= 04 MANUFACTURING ================= */}
       <section className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7">
         <div className="flex items-start justify-between gap-3 mb-2">
           <h2 className="text-xl font-semibold text-slate-900">
-            <span className="font-data text-brand-brick mr-2">03</span>
+            <span className="font-data text-brand-brick mr-2">04</span>
             What this means for manufacturing
           </h2>
           <span className="shrink-0 rounded-full border border-brand-brick text-brand-brick font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
@@ -311,11 +353,11 @@ export default function OutlookPage() {
         </div>
       </section>
 
-      {/* ================= 04 AGRICULTURE ================= */}
+      {/* ================= 05 AGRICULTURE ================= */}
       <section className="rounded-2xl border border-slate-200 bg-white p-5 md:p-7">
         <div className="flex items-start justify-between gap-3 mb-2">
           <h2 className="text-xl font-semibold text-slate-900">
-            <span className="font-data text-brand-brick mr-2">04</span>
+            <span className="font-data text-brand-brick mr-2">05</span>
             What this means for agriculture and plantations
           </h2>
           <span className="shrink-0 rounded-full border border-amber-600 text-amber-700 font-data text-[10px] uppercase tracking-[0.05em] px-2.5 py-1">
@@ -367,54 +409,6 @@ export default function OutlookPage() {
         </div>
       </section>
 
-      {/* ================= 05 RISK BY MONTH ================= */}
-      <section>
-        <h2 className="text-xl font-semibold text-slate-900 mb-3">
-          <span className="font-data text-brand-brick mr-2">05</span>
-          Risk by month
-        </h2>
-        <p className="text-sm text-slate-600 max-w-5xl leading-relaxed">
-          The Heat and Drought rows use Sabah&apos;s average across five
-          past very strong events ({COMPOSITE_YEARS.join(", ")}), since
-          Sabah shows the strongest signal. Each month is compared to what
-          is normal for that specific month, since November and March are
-          naturally very different seasons. The Haze row (marked with *) is
-          a general estimate based on typical fire season patterns in the
-          region, not from our data pipeline.
-        </p>
-
-        <div className="overflow-x-auto mt-5 max-w-5xl">
-          <div className="min-w-[560px]">
-            <div className="grid grid-cols-[80px_repeat(6,1fr)] gap-1.5 mb-1.5">
-              <div />
-              {MONTHLY_TIMELINE.map((m) => (
-                <div key={m.month} className="font-data text-[10px] uppercase text-slate-400 text-center">{m.month}</div>
-              ))}
-            </div>
-            <TimelineRow label="Heat" data={MONTHLY_TIMELINE.map((m) => m.heat)} />
-            <TimelineRow label="Drought" data={MONTHLY_TIMELINE.map((m) => m.drought)} />
-            <TimelineRow label="Haze*" data={MONTHLY_TIMELINE.map((m) => ({ level: m.haze.level }))} />
-          </div>
-        </div>
-
-        <div className="flex flex-wrap gap-4 mt-4">
-          {(["Monitor", "Elevated", "High", "Severe"] as const).map((lvl) => (
-            <span key={lvl} className="flex items-center gap-1.5 font-data text-[10px] uppercase text-slate-500">
-              <span className={`inline-block w-2.5 h-2.5 rounded-sm ${SEVERITY_STYLES[lvl]}`} />
-              {lvl}
-            </span>
-          ))}
-        </div>
-
-        <p className="text-sm text-slate-600 mt-4 max-w-5xl leading-relaxed">
-          Notice the pattern: both risks are mildest in November, then build
-          steadily, and peak later than most people would expect. Heat
-          peaks in March, and drought also peaks in March with an earlier
-          spike in January. Stopping the analysis at January would have
-          missed the worst of it.
-        </p>
-      </section>
-
       {/* ================= 06 WHERE THIS DATA COMES FROM ================= */}
       <section>
         <h2 className="text-xl font-semibold text-slate-900 mb-3">
@@ -461,7 +455,7 @@ export default function OutlookPage() {
       <p className="text-center text-xs text-slate-400 max-w-lg mx-auto leading-relaxed">
         Rainfall and temperature numbers come from our own climate data
         pipeline. The average columns are based on real past events, not a
-        guaranteed forecast for 2026 to 2027.
+        guaranteed forecast for 2026 to 27.
       </p>
     </div>
   );
