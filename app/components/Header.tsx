@@ -7,6 +7,12 @@ import Image from "next/image";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Climate", href: "/climate" },
+  {
+    label: "Climate Outlook",
+    href: "/outlook",
+    highlight: true,
+    tooltip: "See how the climate is evolving, and what to expect over the next few months",
+  },
   { label: "Team", href: "/#team" },
 ];
 
@@ -32,15 +38,37 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm text-slate-700 hover:text-slate-900"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) =>
+            item.highlight ? (
+              <div key={item.href} className="relative group">
+                <a
+                  href={item.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-brick hover:text-orange-700 transition-colors"
+                >
+                  {item.label}
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-brick opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-brick" />
+                  </span>
+                </a>
+                {/* Tooltip */}
+                <div
+                  role="tooltip"
+                  className="pointer-events-none absolute left-1/2 top-full mt-2 w-56 -translate-x-1/2 rounded-lg bg-brand-navy px-3 py-2 text-center text-xs text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100 z-40"
+                >
+                  {item.tooltip}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-slate-700 hover:text-slate-900"
+              >
+                {item.label}
+              </a>
+            )
+          )}
 
           <a
             href="/contact"
@@ -74,9 +102,19 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={close}
-                className="text-sm text-slate-700 py-1"
+                className={
+                  item.highlight
+                    ? "inline-flex items-center gap-1.5 text-sm font-semibold text-brand-brick py-1"
+                    : "text-sm text-slate-700 py-1"
+                }
               >
                 {item.label}
+                {item.highlight && (
+                  <span className="relative flex h-1.5 w-1.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-brick opacity-75" />
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-brick" />
+                  </span>
+                )}
               </a>
             ))}
 
