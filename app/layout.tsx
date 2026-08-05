@@ -53,7 +53,7 @@ export default function RootLayout({
               © {new Date().getFullYear()}
               <span className="font-semibold text-slate-700"> ESGee Earth</span> · ESG for everyone, everywhere; with Earth in mind
               <br />
-              <span className="ftext-center md:text-left text-[10px] text-slate-400/80 italic">
+              <span className=" hidden ftext-center md:text-left text-[10px] text-slate-400/80 italic">
                 Illustrations by{" "}
                 <a
                   href="https://storyset.com/"
