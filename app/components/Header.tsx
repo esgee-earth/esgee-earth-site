@@ -13,6 +13,7 @@ const navItems = [
     highlight: true,
     tooltip: "See how the climate is evolving, and what to expect over the next few months",
   },
+  { label: "Climate Action", href: "/climate-action-sabah" },
   { label: "Team", href: "/#team" },
 ];
 

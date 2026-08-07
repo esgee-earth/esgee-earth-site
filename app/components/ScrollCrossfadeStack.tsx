@@ -26,13 +26,17 @@ function useBeatOpacity(
  * Any number of content beats (up to MAX_BEATS), crossfading in place within one
  * sticky viewport-height slot as the user scrolls through this component's height.
  * Used where a single background chapter needs to tell more than one beat of content.
+ * Pass `background` when this stack isn't already sitting inside something like
+ * HillsJourney that manages its own persistent backdrop.
  */
 export function ScrollCrossfadeStack({
   beats,
   heightVh = 100,
+  background,
 }: {
   beats: ReactNode[];
   heightVh?: number;
+  background?: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
@@ -57,6 +61,7 @@ export function ScrollCrossfadeStack({
   return (
     <div ref={ref} className="relative" style={{ height: `${beats.length * heightVh}vh` }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
+        {background}
         {beats.map((beat, i) => (
           <motion.div
             key={i}

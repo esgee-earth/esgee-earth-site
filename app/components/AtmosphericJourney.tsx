@@ -28,7 +28,7 @@ const CLOUD_PUFFS = [
   { left: "90%", top: 95, width: 170, opacity: 0.24 },
 ];
 
-function Cloud({ width, opacity }: { width: number; opacity: number }) {
+export function Cloud({ width, opacity }: { width: number; opacity: number }) {
   return (
     <svg
       viewBox="0 0 200 100"

@@ -219,6 +219,29 @@ h1, h2, h3, .font-display {
   background: linear-gradient(180deg, #eef3f5 0%, #ffffff 100%);
 }
 
+.scene-question {
+  background: linear-gradient(
+    180deg,
+    #7fb8d6 0%,
+    #a9d4e0 18%,
+    #cfe1dd 34%,
+    #f3d9c0 52%,
+    #fbe6cd 66%,
+    #fdf1de 82%,
+    #fffaf0 100%
+  );
+}
+
+@keyframes birdDrift {
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(16px) translateY(-4px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.bird-float {
+  animation: birdDrift 7s ease-in-out infinite;
+}
+
 @keyframes windDrift {
   from { background-position: 0 0; }
   to { background-position: 140px 0; }
@@ -265,4 +288,54 @@ h1, h2, h3, .font-display {
 .animate-hand-drag {
   animation: handDrag 2.4s ease-in-out infinite;
   transform-origin: center;
+}
+
+/* ========================= HILLS JOURNEY SCENES (Climate Action Sabah) ========================= */
+
+.scene-dawn {
+  background: linear-gradient(180deg, #eef3f5 0%, #f8ecdb 55%, #f4d9bc 100%);
+}
+
+.scene-hujan {
+  background: linear-gradient(180deg, #cfe0e3 0%, #5b9aad 55%, #1f3b40 100%);
+}
+
+.scene-flood {
+  background: linear-gradient(180deg, #1f3b40 0%, #163044 55%, #0b1e33 100%);
+}
+
+@keyframes rainFall {
+  from { transform: translateY(-30px); opacity: 0.9; }
+  to { transform: translateY(260px); opacity: 0.1; }
+}
+
+.rain-line {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 42px;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 100%);
+  border-radius: 2px;
+  animation: rainFall 1.1s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scanPulse {
+  0% { transform: scale(0.4); opacity: 0.55; }
+  70% { opacity: 0; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+.scan-ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1.5px solid #2b7a94;
+  animation: scanPulse 2.8s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ========================= ROOTS SCENE (How this took root) ========================= */
+
+.scene-roots {
+  background: linear-gradient(180deg, #ffffff 0%, #f8ecdb 32%, #eadfc4 58%, #d7e2c9 82%, #c3d9b4 100%);
 }
