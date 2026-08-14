@@ -62,7 +62,7 @@ export default function ClimateActionSabah() {
           <section className="min-h-screen flex items-center justify-center px-6">
             <div className="max-w-xl text-center space-y-4">
               <p className="text-xs font-medium uppercase tracking-wide text-brand-monsoon">
-                Climate Action Sabah
+                Community Climate Action Sabah
               </p>
               <h1 className="font-display text-2xl md:text-4xl font-medium text-brand-navy leading-snug">
                 The hills have a way of telling you first.
@@ -324,7 +324,7 @@ export default function ClimateActionSabah() {
               href="https://instagram.com/climateactionsabah"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-teal hover:underline"
+              className="hidden text-brand-teal hover:underline"
             >
               Instagram
             </a>
