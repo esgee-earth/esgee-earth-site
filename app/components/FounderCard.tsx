@@ -20,10 +20,10 @@ function FounderCard({
 
 }: FounderCardProps) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white/95 p-6 shadow-sm flex flex-col h-full text-center">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 flex flex-col h-full text-center backdrop-blur-sm">
       {/* Photo + Name + Role */}
       <div className="flex flex-col items-center gap-4">
-        <div className="flex-shrink-0 h-20 w-20 rounded-full overflow-hidden bg-slate-100">
+        <div className="flex-shrink-0 h-20 w-20 rounded-full overflow-hidden bg-white/5 border border-brand-teal-bright/30">
           <Image
             src={imageSrc}
             alt={name}
@@ -34,20 +34,20 @@ function FounderCard({
         </div>
 
         <div>
-          <h3 className="text-base font-semibold text-slate-900">{name}</h3>
-          <p className="text-[12px] font-medium text-brand-teal">{role}</p>
+          <h3 className="text-base font-semibold text-white">{name}</h3>
+          <p className="text-[12px] font-medium text-brand-teal-bright uppercase tracking-wide">{role}</p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-sm leading-relaxed text-slate-700 min-h-[84px]">
+      <p className="mt-4 text-sm leading-relaxed text-white/70 min-h-[84px]">
         {description}
       </p>
 
       {/* Highlight + LinkedIn */}
       <div className="mt-2 flex flex-col items-center">
         {highlight && (
-          <p className="text-sm font-semibold text-brand-teal">
+          <p className="text-sm font-semibold text-brand-teal-bright">
             {highlight}
           </p>
         )}
@@ -62,10 +62,10 @@ function FounderCard({
               px-4 py-1.5
               mt-4
               rounded-full
-              bg-emerald-50
-              text-[11px] font-medium text-emerald-700
-              shadow-sm
-              hover:bg-emerald-100
+              border border-brand-teal-bright/30
+              bg-brand-teal-bright/10
+              text-[11px] font-medium text-brand-teal-bright
+              hover:bg-brand-teal-bright/20
               transition
             "
           >

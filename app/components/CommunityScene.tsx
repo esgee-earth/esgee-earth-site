@@ -1,116 +1,71 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { Bird } from "@/app/components/HillsJourney";
 
-const TREES = [
-  { left: "6%", width: 48 },
-  { left: "14%", width: 32 },
-  { left: "20%", width: 40 },
-  { left: "80%", width: 38 },
-  { left: "86%", width: 30 },
-  { left: "93%", width: 44 },
+// Small amber lights along the ridge, standing in for a village at dusk —
+// the same idea as the old illustrated "people gathered on a ridge," just
+// not drawn as literal clip-art figures.
+const VILLAGE_LIGHTS = [
+  { left: "18%", bottom: "15%", delay: "0s" },
+  { left: "24%", bottom: "19%", delay: "0.4s" },
+  { left: "30%", bottom: "16%", delay: "0.8s" },
+  { left: "38%", bottom: "21%", delay: "1.2s" },
+  { left: "44%", bottom: "17%", delay: "1.6s" },
+  { left: "52%", bottom: "20%", delay: "2s" },
+  { left: "58%", bottom: "16%", delay: "0.6s" },
+  { left: "66%", bottom: "19%", delay: "1s" },
+  { left: "72%", bottom: "15%", delay: "1.4s" },
+  { left: "80%", bottom: "18%", delay: "1.8s" },
 ];
 
-const PEOPLE = [
-  { left: "41%", height: 44 },
-  { left: "46%", height: 52 },
-  { left: "51%", height: 46 },
-  { left: "56%", height: 50 },
-  { left: "61%", height: 42 },
+// Same drifting-bird motif already used on the climate-action-sabah dusk scene.
+const BIRDS = [
+  { left: "14%", top: "16%", size: 20, opacity: 0.4, delay: "0s" },
+  { left: "58%", top: "10%", size: 24, opacity: 0.45, delay: "1.1s" },
+  { left: "78%", top: "20%", size: 16, opacity: 0.35, delay: "2s" },
 ];
-
-const SILHOUETTE = "#33503f";
-
-function Tree({ width }: { width: number }) {
-  return (
-    <div className="flex flex-col items-center" style={{ width }}>
-      <div
-        className="rounded-full"
-        style={{ width: width * 0.75, height: width * 0.75, background: SILHOUETTE }}
-      />
-      <div style={{ width: Math.max(4, width * 0.12), height: width * 0.5, background: SILHOUETTE }} />
-    </div>
-  );
-}
-
-function Person({ height }: { height: number }) {
-  return (
-    <div className="flex flex-col items-center" style={{ width: height * 0.55 }}>
-      <div
-        className="rounded-full"
-        style={{ width: height * 0.3, height: height * 0.3, background: SILHOUETTE }}
-      />
-      <div
-        style={{
-          width: height * 0.46,
-          height: height * 0.62,
-          borderRadius: "45% 45% 15% 15%",
-          marginTop: 2,
-          background: SILHOUETTE,
-        }}
-      />
-    </div>
-  );
-}
 
 export function CommunityScene({ children }: { children: ReactNode }) {
   return (
-    <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #eef3f5 0%, #f8ecdb 55%, #f4d9bc 100%)" }}
-    >
-      {/* soft warm glow, low sun */}
-      <div
-        className="absolute pointer-events-none rounded-full"
-        style={{
-          width: 340,
-          height: 340,
-          left: "50%",
-          top: "28%",
-          transform: "translateX(-50%)",
-          background: "radial-gradient(circle, rgba(180,71,47,0.28), transparent 70%)",
-          filter: "blur(6px)",
-        }}
-      />
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden scene-dusk">
+      {/* birds drifting across the upper sky */}
+      {BIRDS.map((b, i) => (
+        <div
+          key={i}
+          className="absolute bird-float pointer-events-none"
+          style={{ left: b.left, top: b.top, animationDelay: b.delay }}
+        >
+          <Bird size={b.size} opacity={b.opacity} />
+        </div>
+      ))}
 
-      {/* rolling hills, back to front */}
+      {/* ridge as a single-stroke contour line, not filled illustrated hills */}
       <svg
-        viewBox="0 0 1440 400"
+        viewBox="0 0 1440 300"
         preserveAspectRatio="none"
-        className="absolute bottom-0 left-0 w-full h-[45%] pointer-events-none"
+        className="absolute bottom-0 left-0 w-full h-[40%] pointer-events-none"
       >
         <path
-          d="M0,260 C240,200 420,240 660,210 C900,180 1100,230 1440,200 L1440,400 L0,400 Z"
-          fill="#c3ddd3"
-          opacity="0.6"
+          d="M0,180 C180,140 340,170 520,150 C700,130 860,165 1040,140 C1220,118 1340,150 1440,130 L1440,300 L0,300 Z"
+          fill="rgba(0,0,0,0.28)"
         />
         <path
-          d="M0,300 C260,260 480,295 700,270 C920,245 1140,285 1440,255 L1440,400 L0,400 Z"
-          fill="#8fbaac"
-          opacity="0.75"
-        />
-        <path
-          d="M0,345 C220,320 460,340 700,325 C960,308 1180,335 1440,318 L1440,400 L0,400 Z"
-          fill="#4d7a67"
-          opacity="0.95"
+          d="M0,180 C180,140 340,170 520,150 C700,130 860,165 1040,140 C1220,118 1340,150 1440,130"
+          fill="none"
+          stroke="rgba(242,184,75,0.4)"
+          strokeWidth="1"
         />
       </svg>
 
-      {/* trees along the ridge */}
-      <div className="absolute bottom-0 left-0 w-full h-[16%] pointer-events-none">
-        {TREES.map((t, i) => (
-          <div key={i} className="absolute bottom-0" style={{ left: t.left }}>
-            <Tree width={t.width} />
-          </div>
-        ))}
-      </div>
-
-      {/* people, gathered on the ridge */}
-      <div className="absolute bottom-0 left-0 w-full h-[14%] pointer-events-none">
-        {PEOPLE.map((p, i) => (
-          <div key={i} className="absolute bottom-0" style={{ left: p.left }}>
-            <Person height={p.height} />
-          </div>
+      {/* village lights along the ridge */}
+      <div className="absolute bottom-0 left-0 w-full h-[40%] pointer-events-none">
+        {VILLAGE_LIGHTS.map((l, i) => (
+          <div
+            key={i}
+            className="village-light"
+            style={{ left: l.left, bottom: l.bottom, animationDelay: l.delay }}
+          />
         ))}
       </div>
 

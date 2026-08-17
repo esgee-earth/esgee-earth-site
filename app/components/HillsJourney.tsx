@@ -23,7 +23,7 @@ const BIRDS = [
   { left: "84%", top: "22%", size: 19, opacity: 0.45, delay: "1.6s" },
 ];
 
-function Bird({ size, opacity }: { size: number; opacity: number }) {
+export function Bird({ size, opacity }: { size: number; opacity: number }) {
   return (
     <svg viewBox="0 0 24 12" width={size} height={size * 0.5}>
       <path

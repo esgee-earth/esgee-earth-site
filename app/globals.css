@@ -334,6 +334,63 @@ h1, h2, h3, .font-display {
   pointer-events: none;
 }
 
+/* ========================= FOREST SCENE — abstract skyline, not clip art ========================= */
+
+.skyline-bar {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(125, 211, 216, 0.12), rgba(125, 211, 216, 0.02));
+  border-top: 1px solid rgba(125, 211, 216, 0.32);
+}
+
+.rise-particle {
+  position: absolute;
+  bottom: 12%;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(125, 211, 216, 0.7);
+  animation: riseFade 6s ease-in infinite;
+}
+
+/* ========================= TEAM + COLLABORATIONS — dark instrument panel ========================= */
+
+.scene-credentials {
+  background:
+    radial-gradient(ellipse 60% 45% at 25% 20%, rgba(43, 122, 148, 0.18), transparent 60%),
+    linear-gradient(180deg, #0b1e33 0%, #0e2436 55%, #0b1e33 100%);
+}
+
+.instrument-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at center, black 45%, transparent 80%);
+  pointer-events: none;
+}
+
+/* ========================= COMMUNITY SCENE — dusk ridge, not clip-art hills ========================= */
+
+.scene-dusk {
+  background: linear-gradient(180deg, #1c1310 0%, #3a2317 38%, #4a3320 58%, #23342f 100%);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.village-light {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: #f2b84b;
+  box-shadow: 0 0 8px 2px rgba(242, 184, 75, 0.55);
+  animation: flicker 4s ease-in-out infinite;
+}
+
 /* ========================= ROOTS SCENE (How this took root) ========================= */
 
 .scene-roots {

@@ -4,28 +4,16 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 
 const DROPLET_POSITIONS = [12, 24, 38, 52, 66, 78, 90];
-const CANOPY_BUMPS = [
-  { left: "0%", width: 90, height: 40, kind: "tree" },
-  { left: "8%", width: 36, height: 70, kind: "building" },
-  { left: "15%", width: 100, height: 48, kind: "tree" },
-  { left: "24%", width: 28, height: 100, kind: "building" },
-  { left: "30%", width: 140, height: 74, kind: "tree" },
-  { left: "41%", width: 44, height: 58, kind: "building" },
-  { left: "49%", width: 110, height: 54, kind: "tree" },
-  { left: "58%", width: 32, height: 86, kind: "building" },
-  { left: "64%", width: 100, height: 46, kind: "tree" },
-  { left: "72%", width: 38, height: 66, kind: "building" },
-  { left: "79%", width: 130, height: 72, kind: "tree" },
-  { left: "90%", width: 90, height: 40, kind: "tree" },
+const SKYLINE_BARS = [
+  14, 34, 20, 58, 26, 44, 68, 30, 50, 22, 62, 36, 48, 18, 56, 28, 40, 64, 24, 46,
+  32, 54, 20, 42, 60, 28, 38, 66, 24, 50,
 ];
 
-const CLOUD_PUFFS = [
-  { left: "0%", top: 60, width: 220, opacity: 0.28 },
-  { left: "18%", top: 100, width: 160, opacity: 0.2 },
-  { left: "33%", top: 70, width: 260, opacity: 0.32 },
-  { left: "56%", top: 110, width: 180, opacity: 0.22 },
-  { left: "72%", top: 65, width: 240, opacity: 0.3 },
-  { left: "90%", top: 95, width: 170, opacity: 0.24 },
+const RISE_PARTICLES = [
+  { left: "8%", duration: 7 }, { left: "18%", duration: 9 }, { left: "27%", duration: 6.5 },
+  { left: "38%", duration: 8 }, { left: "47%", duration: 7.5 }, { left: "56%", duration: 9.5 },
+  { left: "64%", duration: 6 }, { left: "73%", duration: 8.5 }, { left: "82%", duration: 7 },
+  { left: "91%", duration: 9 },
 ];
 
 export function Cloud({ width, opacity }: { width: number; opacity: number }) {
@@ -81,12 +69,6 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
   const opacityWind = useChapterOpacity(scrollYProgress, 2);
   const opacityForest = useChapterOpacity(scrollYProgress, 3);
   const opacities = [opacitySpace, opacityOcean, opacityWind, opacityForest];
-  const labels = [
-    "GOES-19 · FULL DISK · GEOCOLOR",
-    "SEA SURFACE · DATA ORIGIN",
-    "ATMOSPHERIC TRANSPORT",
-    "CANOPY · GROUND TRUTH",
-  ];
 
   return (
     <div
@@ -95,7 +77,16 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
       style={{ height: `${TOTAL_WEIGHT * 100}vh` }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden -z-10">
-        <motion.div className="absolute inset-0 scene-space" style={{ opacity: opacities[0] }} />
+        <motion.div className="absolute inset-0 scene-space" style={{ opacity: opacities[0] }}>
+          <div className="absolute" style={{ top: "16%", right: "10%", width: 6, height: 6 }}>
+            <div
+              className="rounded-full"
+              style={{ width: 6, height: 6, background: "#7dd3d8", boxShadow: "0 0 10px 2px rgba(125,211,216,0.6)" }}
+            />
+            <div className="scan-ring" style={{ width: 6, height: 6, top: 0, left: 0 }} />
+            <div className="scan-ring" style={{ width: 6, height: 6, top: 0, left: 0, animationDelay: "1.4s" }} />
+          </div>
+        </motion.div>
         <motion.div className="absolute inset-0 scene-ocean" style={{ opacity: opacities[1] }}>
           {DROPLET_POSITIONS.map((left, i) => (
             <span key={left} className="droplet" style={{ left: `${left}%`, animationDelay: `${i * 0.7}s` }} />
@@ -103,55 +94,20 @@ export function AtmosphericJourney({ children }: { children: React.ReactNode }) 
         </motion.div>
         <motion.div className="absolute inset-0 scene-wind" style={{ opacity: opacities[2] }} />
         <motion.div className="absolute inset-0 scene-forest" style={{ opacity: opacities[3] }}>
-          {CLOUD_PUFFS.map((c, i) => (
+          {RISE_PARTICLES.map((p, i) => (
             <div
-              key={`cloud-${i}`}
-              className="absolute"
-              style={{ left: c.left, top: c.top }}
-            >
-              <Cloud width={c.width} opacity={c.opacity} />
-            </div>
+              key={`rise-${i}`}
+              className="rise-particle"
+              style={{ left: p.left, animationDuration: `${p.duration}s`, animationDelay: `${i * 0.5}s` }}
+            />
           ))}
-          {CANOPY_BUMPS.map((b, i) =>
-            b.kind === "building" ? (
-              <div
-                key={i}
-                className="absolute bottom-0 bg-black/25"
-                style={{ left: b.left, width: b.width, height: b.height }}
-              />
-            ) : (
-              <div
-                key={i}
-                className="absolute bottom-0 flex flex-col items-center"
-                style={{ left: b.left, width: b.width }}
-              >
-                <div
-                  className="rounded-full bg-black/20"
-                  style={{ width: b.width * 0.75, height: b.width * 0.75 }}
-                />
-                <div
-                  className="bg-black/30"
-                  style={{ width: Math.max(4, b.width * 0.1), height: b.height * 0.4 }}
-                />
-              </div>
-            )
-          )}
+          <div className="absolute bottom-0 left-0 right-0 flex items-end gap-[3px] px-[6%]" style={{ height: "30%" }}>
+            {SKYLINE_BARS.map((h, i) => (
+              <div key={i} className="skyline-bar flex-1" style={{ height: `${h}%` }} />
+            ))}
+          </div>
         </motion.div>
 
-        {/* Telemetry-style corner labels — kept in code (drives `labels`/`opacities` above)
-            but not rendered on the live site; out-of-place jargon for visitors.
-            Re-enable by uncommenting the block below if wanted later. */}
-        {/* <div className="absolute top-6 left-6 md:top-8 md:left-8 font-data text-[10px] tracking-[0.25em] uppercase">
-          {labels.map((label, i) => (
-            <motion.span
-              key={label}
-              className="text-white/45"
-              style={{ opacity: opacities[i], position: i === 0 ? "static" : "absolute", top: 0, left: 0 }}
-            >
-              {label}
-            </motion.span>
-          ))}
-        </div> */}
       </div>
 
       <div className="relative z-10 -mt-[100vh]">
