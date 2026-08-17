@@ -1,36 +1,31 @@
 "use client";
 
-type ClimateMetric = {
-  label: string;
-  unit: string;
-  baseline: number;
-  ssp126: number;
-  ssp370: number;
-};
+import type { ClimateMetric } from "@/app/climate/data";
 
 type ClimateRiskSnapshotProps = {
   location?: string;
   coordinates?: string;
   metrics?: ClimateMetric[];
   note?: string;
+  /** Small chip in the top-right corner, e.g. "11-model ensemble" for real
+   * data or "Illustrative" for a placeholder preview. Kept as a prop rather
+   * than hardcoded so this component stays honest if it's ever reused for a
+   * category that isn't backed by real data yet. */
+  badgeLabel?: string;
+  badgeTone?: "amber" | "teal";
 };
 
-// PLACEHOLDER DATA — replace with real model output before publishing.
-// These numbers are illustrative only; they are not derived from a model run.
+// Fallback default — Kota Kinabalu Heat data, matching app/climate/data.ts.
+// Only used if no metrics are passed in; every real call site should pass
+// its own location/coordinates/metrics explicitly.
 const DEFAULT_METRICS: ClimateMetric[] = [
   {
-    label: "Hot days (>35°C)",
-    unit: "days / year",
-    baseline: 4,
-    ssp126: 18,
-    ssp370: 46,
-  },
-  {
-    label: "Heavy rainfall days (>50mm)",
-    unit: "days / year",
-    baseline: 12,
-    ssp126: 15,
-    ssp370: 21,
+    label: "Outdoor WBGT (Kong-Huber, daily mean)",
+    unit: "°C",
+    baseline: 31.8,
+    ssp126: 33.1,
+    ssp245: 33.3,
+    ssp585: 33.9,
   },
 ];
 
@@ -55,7 +50,7 @@ function Bar({
           style={{ width: `${width}%` }}
         />
       </div>
-      <span className="w-8 shrink-0 text-right text-xs font-medium text-slate-800">
+      <span className="w-10 shrink-0 text-right text-xs font-medium text-slate-800">
         {value}
       </span>
     </div>
@@ -66,14 +61,23 @@ export default function ClimateRiskSnapshot({
   location = "Kota Kinabalu, Sabah",
   coordinates = "5.97°N, 116.07°E",
   metrics = DEFAULT_METRICS,
-  note = "Illustrative example — single-model preview pending final analysis. Full multi-model ensemble available on request.",
+  note = "11-model CMIP6 ensemble median (Kong-Huber method). Mid-century horizon (2041–2060), baseline 1995–2014.",
+  badgeLabel = "11-model ensemble",
+  badgeTone = "teal",
 }: ClimateRiskSnapshotProps) {
+  const badgeClasses =
+    badgeTone === "teal"
+      ? "bg-emerald-50 border-emerald-100 text-brand-teal"
+      : "bg-amber-50 border-amber-200 text-amber-700";
+
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6 shadow-sm">
       <div className="flex items-center justify-between mb-1">
         <h3 className="font-semibold text-slate-900">Physical risk snapshot</h3>
-        <span className="inline-flex items-center rounded-full bg-amber-50 border border-amber-200 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-amber-700">
-          Illustrative
+        <span
+          className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide ${badgeClasses}`}
+        >
+          {badgeLabel}
         </span>
       </div>
 
@@ -83,7 +87,7 @@ export default function ClimateRiskSnapshot({
 
       <div className="space-y-5">
         {metrics.map((m) => {
-          const max = Math.max(m.baseline, m.ssp126, m.ssp370) * 1.15;
+          const max = Math.max(m.baseline, m.ssp126, m.ssp245, m.ssp585) * 1.15;
           return (
             <div key={m.label} className="space-y-1.5">
               <div className="flex items-baseline justify-between">
@@ -91,8 +95,9 @@ export default function ClimateRiskSnapshot({
                 <span className="text-[11px] text-slate-400">{m.unit}</span>
               </div>
               <Bar label="Baseline (1995–2014)" value={m.baseline} max={max} color="bg-slate-400" />
-              <Bar label="2050s · SSP1-2.6" value={m.ssp126} max={max} color="bg-emerald-500" />
-              <Bar label="2050s · SSP3-7.0" value={m.ssp370} max={max} color="bg-amber-500" />
+              <Bar label="Mid-century · SSP1-2.6" value={m.ssp126} max={max} color="bg-emerald-500" />
+              <Bar label="Mid-century · SSP2-4.5" value={m.ssp245} max={max} color="bg-amber-500" />
+              <Bar label="Mid-century · SSP5-8.5" value={m.ssp585} max={max} color="bg-brand-brick" />
             </div>
           );
         })}
