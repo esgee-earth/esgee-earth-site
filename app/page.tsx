@@ -155,7 +155,7 @@ export default function Home() {
                   What that number means for a balance sheet
                 </h2>
                 <p className="text-sm text-white/60 mt-2">
-                  Same location, same scenario — 46 hot days a year by the 2050s under SSP3-7.0.
+                  Same location, same scenario — 46 hot days a year by the 2050s under SSP2-4.5.
                 </p>
               </div>
               <div className="grid sm:grid-cols-3 gap-4">
@@ -163,24 +163,21 @@ export default function Home() {
                   <Factory className="w-4 h-4 text-brand-teal mb-2" />
                   <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Operational</p>
                   <p className="text-sm text-slate-700">
-                    Cooling load, outdoor workforce safety windows, and equipment
-                    derating during peak heat.
+                    Asset downtime, cooling loads, inundation risks, and workforce safety windows across extreme heat, flood, and storm events.
                   </p>
                 </div>
                 <div className="bg-white/90 rounded-2xl p-4 text-left">
                   <DollarSign className="w-4 h-4 text-brand-teal mb-2" />
                   <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Financial</p>
                   <p className="text-sm text-slate-700">
-                    Capex for resilience upgrades, insurance repricing, and
-                    asset-level impairment exposure.
+                    Quantifies Climate Value at Risk across CapEx and OpEx adaptation, insurance repricing, and asset impairment exposure.
                   </p>
                 </div>
                 <div className="bg-white/90 rounded-2xl p-4 text-left">
                   <FileText className="w-4 h-4 text-brand-teal mb-2" />
                   <p className="text-xs font-medium uppercase tracking-wide text-slate-400 mb-1">Disclosure</p>
                   <p className="text-sm text-slate-700">
-                    Feeds IFRS S2 Metrics &amp; Targets and TCFD Strategy as a
-                    quantified exposure, not a narrative.
+                    Provides the empirical foundation for mandatory disclosures, turning your climate transition journey into an audit-proof asset.
                   </p>
                 </div>
               </div>
@@ -220,7 +217,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ========================= TEAM + COLLABORATIONS (dark instrument panel, full-bleed) ========================= */}
+      {/* ========================= TEAM + COLLABORATIONS ========================= */}
       <div className="scene-credentials relative">
         <div className="instrument-grid" />
         <div className="max-w-4xl mx-auto px-4 pt-10 relative">
