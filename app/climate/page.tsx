@@ -21,10 +21,10 @@ export default function ClimatePage() {
           Climate Impact Engine
         </span>
         <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900">
-          Your physical climate risk, hazard by hazard
+          Physical climate risk, hazard by hazard
         </h1>
         <p className="text-sm md:text-base text-slate-700">
-          Downscaled CMIP6 projections translated into the hazard indicators and business
+          Downscaled climate projections translated into the hazard indicators and business
           impacts behind IFRS S2/NSRF, Bursa and GRI reporting.
         </p>
       </div>

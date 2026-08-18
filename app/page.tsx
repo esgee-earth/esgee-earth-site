@@ -130,7 +130,7 @@ export default function Home() {
                 Where the science starts
               </p>
               <p className="text-white/55 text-sm mt-2">
-                From atmospheric data to what it means on the ground
+                From earth data to what it means for business
               </p>
             </div>,
 
@@ -220,154 +220,153 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ========================= TEAM + COLLABORATIONS (dark instrument panel) ========================= */}
+      {/* ========================= TEAM + COLLABORATIONS (dark instrument panel, full-bleed) ========================= */}
       <div className="scene-credentials relative">
         <div className="instrument-grid" />
-        <div className="max-w-4xl mx-auto px-4 pt-8 relative">
+        <div className="max-w-4xl mx-auto px-4 pt-10 relative">
           <WarmingStripes height="h-3 md:h-4" />
         </div>
 
         <div className="mx-auto max-w-6xl px-4 py-14 space-y-16 relative">
 
-          {/* ========================= TEAM ========================= */}
-          <section id="team" className="px-4 md:px-6">
-            <div className="max-w-5xl mx-auto space-y-6 text-center">
-              <div className="space-y-3">
+            {/* ========================= TEAM ========================= */}
+            <section id="team" className="px-4 md:px-6">
+              <div className="max-w-5xl mx-auto space-y-6 text-center">
+                <div className="space-y-3">
+                  <div className="flex justify-center">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 border border-brand-teal-bright/25">
+                      <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal-bright">
+                        Founding Team
+                      </span>
+                    </div>
+                  </div>
+
+                  <h2 className="font-display text-xl md:text-2xl font-medium tracking-tight text-white">
+                    Science-led clarity. Tech-enabled simplicity.
+                  </h2>
+
+                  <p className="text-sm md:text-[14px] text-white/70 max-w-3xl mx-auto">
+                    We turn complex climate science and ESG data systems into something usable and practical.
+                  </p>
+                </div>
+
+                <div className="grid gap-4 md:grid-cols-2">
+                  <FounderCard
+                    name="Dr Marieanne Leong"
+                    role="Founder · Climate Scientist"
+                    description="6+ years experience in climate and computing as Senior Lecturer, AI Fellow, Microsoft Tech Mentor, and Certified ESG Reporting Practitioner."
+                    highlight="On a mission to turn complex ESG into clarity and practical action."
+                    imageSrc="/founders/mae.png"
+                    linkedin="https://www.linkedin.com/in/marieanneleong"
+                  />
+                  <FounderCard
+                    name="Dr Laurynas Pukenas"
+                    role="Chief Technology Officer"
+                    description="6+ years experience in delivering innovative solutions for operations of 3 largest UK railway operators."
+                    highlight="On a mission to engineer simplicity without sacrificing power."
+                    imageSrc="/founders/laurynas.png"
+                    linkedin="https://www.linkedin.com/in/laurynaspukenas"
+                  />
+                </div>
+              </div>
+            </section>
+
+            {/* ========================= COLLABORATIONS ========================= */}
+            <section className="w-full px-4 md:px-6">
+              <div className="max-w-4xl mx-auto text-center space-y-3">
                 <div className="flex justify-center">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 border border-brand-teal-bright/25">
                     <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal-bright">
-                      Founding Team
+                      Collaborations
                     </span>
                   </div>
                 </div>
 
-                <h2 className="font-display text-xl md:text-2xl font-medium tracking-tight text-white">
-                  Science-led clarity. Tech-enabled simplicity.
-                </h2>
-
-                <p className="text-sm md:text-[14px] text-white/70 max-w-3xl mx-auto">
-                  We turn complex climate science and ESG data systems into something usable and practical.
-                </p>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <FounderCard
-                  name="Dr Marieanne Leong"
-                  role="Founder · Climate Scientist"
-                  description="6+ years experience in climate and computing as Senior Lecturer, AI Fellow, Microsoft Tech Mentor, and Certified ESG Reporting Practitioner."
-                  highlight="On a mission to turn complex ESG into clarity and practical action."
-                  imageSrc="/founders/mae.png"
-                  linkedin="https://www.linkedin.com/in/marieanneleong"
-                />
-                <FounderCard
-                  name="Dr Laurynas Pukenas"
-                  role="Chief Technology Officer"
-                  description="6+ years experience in delivering innovative solutions for operations of 3 largest UK railway operators."
-                  highlight="On a mission to engineer simplicity without sacrificing power."
-                  imageSrc="/founders/laurynas.png"
-                  linkedin="https://www.linkedin.com/in/laurynaspukenas"
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* ========================= COLLABORATIONS ========================= */}
-          <section className="w-full px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-3">
-              <div className="flex justify-center">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 border border-brand-teal-bright/25">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-brand-teal-bright">
-                    Collaborations
-                  </span>
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-3 mt-4">
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-brand-teal-bright/10 flex items-center justify-center mb-2">
-                    <GraduationCap className="w-5 h-5 text-brand-teal-bright" />
+                <div className="grid gap-4 md:grid-cols-3 mt-4">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-teal-bright/10 flex items-center justify-center mb-2">
+                      <GraduationCap className="w-5 h-5 text-brand-teal-bright" />
+                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Academic</span>
+                    <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
+                      <a href="https://trace.umk.edu.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMK-TRaCe</a>
+                      <a href="https://aibig.umk.edu.my" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMK-AIBIG</a>
+                      <a href="https://www.ums.edu.my/ibtp/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMS-ITBC</a>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Academic</span>
-                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
-                    <a href="https://trace.umk.edu.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMK-TRaCe</a>
-                    <a href="https://aibig.umk.edu.my" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMK-AIBIG</a>
-                    <a href="https://www.ums.edu.my/ibtp/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">UMS-ITBC</a>
-                  </div>
-                </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-brand-brick/15 flex items-center justify-center mb-2">
-                    <Building2 className="w-5 h-5 text-brand-brick" />
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-brick/15 flex items-center justify-center mb-2">
+                      <Building2 className="w-5 h-5 text-brand-brick" />
+                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Industry</span>
+                    <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
+                      <a href="https://riverstone-enviro.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">Riverstone Environmental Sdn Bhd</a>
+                      <a href="https://esgright.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">ESGright Sdn Bhd</a>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Industry</span>
-                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
-                    <a href="https://riverstone-enviro.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">Riverstone Environmental Sdn Bhd</a>
-                    <a href="https://esgright.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">ESGright Sdn Bhd</a>
-                  </div>
-                </div>
 
-                <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
-                  <div className="w-10 h-10 rounded-full bg-brand-teal/15 flex items-center justify-center mb-2">
-                    <Users className="w-5 h-5 text-brand-teal-bright" />
-                  </div>
-                  <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Network</span>
-                  <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
-                    <a href="https://www.esg-mapan.org.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">ESG-MAPAN</a>
+                  <div className="rounded-xl border border-white/10 bg-white/[0.03] p-5 flex flex-col items-center text-center">
+                    <div className="w-10 h-10 rounded-full bg-brand-teal/15 flex items-center justify-center mb-2">
+                      <Users className="w-5 h-5 text-brand-teal-bright" />
+                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-wide text-white/40">Network</span>
+                    <div className="mt-2 flex flex-col gap-1.5 text-sm text-white/70">
+                      <a href="https://www.esg-mapan.org.my/" target="_blank" rel="noopener noreferrer" className="hover:text-brand-teal-bright transition">ESG-MAPAN</a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
+          </div>
         </div>
 
-        {/* ========================= BEYOND THE CLIENT WORK (dusk ridge scene) ========================= */}
-        <CommunityScene>
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <div className="flex justify-center">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 border border-[#f2b84b]/30">
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#f2b84b]">
-                  Beyond the Client Work
-                </span>
-              </div>
-            </div>
-
-            <h2 className="font-display text-xl md:text-2xl font-medium text-white">
-              Climate and nature risk isn&apos;t just a line in a disclosure report
-            </h2>
-
-            <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
-              It&apos;s lived, every monsoon season, by the communities we come from. 
-              Climate Action Sabah is how we give back.
-            </p>
-            <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
-              We advocate for and promote community science, digital storytelling, and
-              citizen science across Sabah and beyond.
-            </p>
-            <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
-              Because a better climate future has to include the people already living it.
-            </p>
-
-            <div className="rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm p-6 md:p-8 max-w-xl mx-auto flex flex-col items-center text-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#f2b84b]/15 flex items-center justify-center">
-                <HeartHandshake className="w-5 h-5 text-[#f2b84b]" />
-              </div>
-              <h3 className="font-display font-medium text-white">Climate Action Sabah</h3>
-              <p className="text-sm text-white/70">
-                Supported by the British Council Alumni UK Climate Action Grant, in
-                collaboration with UMK-TRaCe.
-              </p>
-              <a
-                href="/climate-action-sabah"
-                className="inline-flex items-center justify-center rounded-full bg-[#f2b84b] px-5 py-2.5 text-sm font-medium text-[#1c1310] hover:bg-[#f2b84b]/85 transition-colors"
-              >
-                Learn more →
-              </a>
+      {/* ========================= BEYOND THE CLIENT WORK (dusk ridge scene, full-bleed) ========================= */}
+      <CommunityScene>
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-3 py-1 border border-[#f2b84b]/30">
+              <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#f2b84b]">
+                Beyond the Client Work
+              </span>
             </div>
           </div>
-        </CommunityScene>
 
-      </div>
+          <h2 className="font-display text-xl md:text-2xl font-medium text-white">
+            Climate and nature risk isn&apos;t just a line in a disclosure report
+          </h2>
+
+          <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
+            It&apos;s lived, every monsoon season, by the communities we come from. 
+            Climate Action Sabah is how we give back.
+          </p>
+          <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
+            We advocate for and promote community science, digital storytelling, and
+            citizen science across Sabah and beyond.
+          </p>
+          <p className="text-sm md:text-[14px] text-white/75 max-w-3xl mx-auto">
+            Because a better climate future has to include the people already living it.
+          </p>
+
+          <div className="rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-sm p-6 md:p-8 max-w-xl mx-auto flex flex-col items-center text-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-[#f2b84b]/15 flex items-center justify-center">
+              <HeartHandshake className="w-5 h-5 text-[#f2b84b]" />
+            </div>
+            <h3 className="font-display font-medium text-white">Climate Action Sabah</h3>
+            <p className="text-sm text-white/70">
+              Supported by the British Council Alumni UK Climate Action Grant, in
+              collaboration with UMK-TRaCe.
+            </p>
+            <a
+              href="/climate-action-sabah"
+              className="inline-flex items-center justify-center rounded-full bg-[#f2b84b] px-5 py-2.5 text-sm font-medium text-[#1c1310] hover:bg-[#f2b84b]/85 transition-colors"
+            >
+              Learn more →
+            </a>
+          </div>
+        </div>
+      </CommunityScene>
     </>
   );
 }
