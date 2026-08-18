@@ -1,15 +1,10 @@
 // REAL DATA — Heat category. Outdoor WBGT (Kong-Huber method, daily mean),
 // 11-model CMIP6 ensemble median, from wbgt_ensemble_summary.csv
-// (baseline_1995_2014, mid_century_2041_2060). Sepanggar Bay Port stands in
-// for Tuaran — both resolve to the same NEX-GDDP grid cell (6.125°N,
-// 116.125°E), so showing both would just duplicate one location twice.
+// (baseline_1995_2014, mid_century_2041_2060). 
 //
 // All other hazard categories (Rainfall & Water, Wind, Coastal, Flood &
 // Landslide) are "coming soon" — see HAZARD_CATEGORIES below — and
-// deliberately carry no placeholder numbers here. Water already has real
-// KK/Tuaran indicator output, but on a 1985–2014 baseline (vs. Heat's
-// 1995–2014), so it isn't shown yet rather than shown on a mismatched
-// baseline — see the infra reference doc for the open baseline decision.
+// deliberately carry no placeholder numbers here. 
 
 export type ClimateMetric = {
   label: string;
@@ -45,8 +40,8 @@ export const HEAT_LOCATIONS: ClimateLocation[] = [
     ],
   },
   {
-    id: "sipitang-kimanis",
-    location: "Sipitang / Kimanis, Sabah",
+    id: "kimanis",
+    location: "Kimanis, Sabah",
     coordinates: "5.64°N, 115.89°E",
     metrics: [
       { label: "Outdoor WBGT (Kong-Huber, daily mean)", unit: "°C", baseline: 32.4, ssp126: 33.7, ssp245: 33.9, ssp585: 34.4 },
@@ -54,7 +49,7 @@ export const HEAT_LOCATIONS: ClimateLocation[] = [
   },
   {
     id: "semporna-sipadan",
-    location: "Semporna / Sipadan, Sabah",
+    location: "Sipadan, Sabah",
     coordinates: "4.30°N, 118.60°E",
     metrics: [
       { label: "Outdoor WBGT (Kong-Huber, daily mean)", unit: "°C", baseline: 33.7, ssp126: 34.7, ssp245: 35.0, ssp585: 35.3 },
